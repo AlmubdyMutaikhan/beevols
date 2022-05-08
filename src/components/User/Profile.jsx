@@ -46,23 +46,27 @@ const UserProfile = () => {
     }
 
     const load = async () => {
-            const myUser = await isAuthenticated();
-            setId(myUser.payload.id);
-
-            const userData = await getUser(params.id);
-            console.log(userData.user);
-            setAbout(userData.user.about);
-            setFriendsList(userData.user.friends);
-            setName({fname : userData.user.fname, sname : userData.user.sname});
-            setRegion(userData.user.region);
-            setMajor(userData.user.major);
-            setDate(userData.user.date);
-            setWins(userData.user.wins);
-            setAvatarURL(userData.user.avatarURL);
-            setFriendsList(userData.user.friends);
-            setFriendsReqList(userData.user.requestFriendsList);
-            setBloggs(userData.user.blogs);
-            setEmail(userData.user.email);
+            try {
+                const myUser = await isAuthenticated();
+                setId(myUser.payload.id);
+            } catch(err) {
+                console.log(err);
+            }
+            
+                const userData = await getUser(params.id);
+                console.log(userData.user);
+                setAbout(userData.user.about);
+                setFriendsList(userData.user.friends);
+                setName({fname : userData.user.fname, sname : userData.user.sname});
+                setRegion(userData.user.region);
+                setMajor(userData.user.major);
+                setDate(userData.user.date);
+                setWins(userData.user.wins);
+                setAvatarURL(userData.user.avatarURL);
+                setFriendsList(userData.user.friends);
+                setFriendsReqList(userData.user.requestFriendsList);
+                setBloggs(userData.user.blogs);
+                setEmail(userData.user.email); 
         }
 
     useEffect(() => {
@@ -144,10 +148,10 @@ const UserProfile = () => {
                     <h1>Өзім туралы</h1>
                     <p>{about}</p>
                 </div>
-                {id !== params.id && !friendsList.includes(id) && <div className='profile-edit' onClick={!friendsReqList.includes(id) && handleAddFriend}><a> {
+                {id.length > 0 && id !== params.id && !friendsList.includes(id) && <div className='profile-edit' onClick={!friendsReqList.includes(id) && handleAddFriend}><a> {
                   !friendsReqList.includes(id) ? 'Дос болу' : 'Өтініш жіберілді'
                 }</a></div>}
-                {id !== params.id && friendsList.includes(id) && <div className='profile-edit'>
+                {id.length > 0 && id !== params.id && friendsList.includes(id) && <div className='profile-edit'>
                     <a>Досым</a></div>}
             </div>
             {updated && <Notification msg={'Сіздің дос болу өтнішіңіз сәтті жіберілді'} title={'Дос болу'} bgColor={'green'}/> }
