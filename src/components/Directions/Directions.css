@@ -1,0 +1,37 @@
+.directions-container {
+    margin-top: 20px;
+    height: 100px;
+    width: 80%;
+    margin-left: 10%;
+    font-family: var(--montserrat);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+
+}
+
+.direction-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.direction-text img {
+    margin-left: 5px;
+}
+.directions-container .directions-items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.directions-items .direction-item p{
+    color: var(--fourth);
+    font-weight: bold;
+    transition: 0.2s ease-out;
+    padding: 10 5;
+    cursor: pointer;
+}
+
+.directions-items .direction-item p:hover {
+    border-bottom: 3px solid var(--first);
+}

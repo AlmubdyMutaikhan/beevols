@@ -1,0 +1,112 @@
+
+.slide-content-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: var(--montserrat);
+}
+
+.slide-content-container .slide-content-image {
+    height: 100%;
+    width: 60%;
+    background: url('https://baigenews.kz/upload/storage/ee/eebd7680145e4ce0de1735fb8a7f6033.JPG');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column-reverse;
+} 
+
+
+.slide-content-container .slide-content-text {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.slide-content-index h1 {
+    color: rgb(185, 184, 184);
+    float: right;
+    margin-right: 20px;
+    border-bottom: 2px solid var(--first);
+    padding: 5px 10px;
+}
+
+.slide-content-index h1 span {
+    color: var(--first);
+}
+
+.slide-content-title {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+}
+
+.slide-content-title  h1 {
+    padding: 5px 10px;
+    transition: 0.2s ease-out;
+
+}
+
+.slide-content-title h1:hover  {
+    border-bottom: 3px solid var(--first);
+    margin-top: -15px;
+}
+
+
+.slide-content-title .slide-content-img {
+    height: 50px;
+    width: 50px;
+    margin-left: 7px;
+}
+
+.slide-content-p {
+    height: 30%;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.slide-content-btn {
+    height: 50px;
+    width: 200px;
+    background: var(--fourth);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 50%;
+    transition: 0.2s ease-in;
+}
+
+.slide-content-btn a {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.slide-content-btn:hover {
+    background-color: var(--fifth);
+}
+
+.slide-content-intro-text {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(7, 116, 189, 0.329);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.slide-content-event {
+    border: 2px solid var(--first);
+    border-radius: 5px;
+    margin-top: -50px;
+    margin-bottom: 40px;
+}

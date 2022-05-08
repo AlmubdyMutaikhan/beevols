@@ -1,0 +1,98 @@
+.info-container {
+    width: 80%;
+    margin-left: 10%;
+    height: 150px;
+    margin-top: 50px;
+    display: flex;
+    border-radius: 10px;
+    font-family: var(--montserrat);
+    justify-content: space-between;
+}
+
+.info-container .rsrcs-container {
+    width: 49%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+    
+.rsrcs-container .card-colored-container {
+    height: 100%;
+    width: 47%;
+    background-color: var(--second);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.hot-news-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hot-news-text img {
+    height: 43px;
+    width: 43px;
+    margin-left: 10px;
+}
+.img-card {
+    width: 100%;
+    z-index: 2;
+}
+
+.img-card img {
+    float: right;
+    height: 50px;
+    width: 70px;
+}
+
+.card-colored-container h1 {
+    font-size: 25px;
+    z-index: 11;
+}
+
+.card-colored-container p {
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 11;
+}
+
+.hot-news-container {
+    border: 1.2px solid rgb(182, 179, 179);
+    height: 100%;
+    width: 49%;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+
+.hot-news-container h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.hot-news-container p {
+    font-size: 1.1rem;
+}
+.hot-news-item {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-around;
+    color: var(--third);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+
+.hot-news-item .news-title {
+    color: var(--fourth);
+}
+
+.hot-news-item:hover {
+    background: yellow;
+}

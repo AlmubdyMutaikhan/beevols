@@ -1,0 +1,97 @@
+.myproject-container {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 150px;
+    font-family: var(--montserrat);
+    justify-content: space-between;
+}
+
+.myproject-data {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+
+.myproject-data .myproject-title {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.myproject-title img{
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+}
+
+.myproject-title .myproject-title-text {
+  margin-left: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.myproject-title-text .myproject-desc {
+    width: 400px;
+    background: var(--fourth);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 50px;
+}
+
+.myproject-title-text p {
+    margin-top: 30px;
+}
+
+.myproject-title-text span {
+    color: var(--fourth);
+}
+
+.myproject-title-text p span {
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+} 
+
+.myproject-todos {
+    height: 300px;
+    width: 80%;
+    font-weight: bold;
+}
+
+.todo-add-container {
+    margin-top: 10px;
+    color: var(--fourth);
+    border: 2px solid var(--fourth);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.todo-form {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.todo-add-btn {
+    outline: none;
+    border: none;
+    background-color: var(--fourth);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+

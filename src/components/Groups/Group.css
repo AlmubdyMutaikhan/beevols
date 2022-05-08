@@ -1,0 +1,125 @@
+.groups-container {
+    margin-top: 130px;
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--montserrat);
+    padding-top: 20px;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.group-label {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.groups-container h1 {
+    font-size: 40px;
+}
+.groups-card-container {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.groups-item-container {
+    display: flex;
+    height: auto;
+    width: auto;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.group-first-part {
+    height: auto;
+    width: 450px;
+    border-radius: 10px;
+    border: 3px solid var(--fourth);
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+    margin-left: 50px;
+}
+
+
+.group-metrics-item p {
+    color: var(--fourth);
+}
+.group-metrics-item {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+.group-metrics-item i {
+    font-size: 30px;
+    color: var(--fourth);
+}
+
+.group-item-avatar {
+    height: 100%;
+    width: 40%;
+}
+
+.group-item-avatar img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.group-item-data {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.group-item-data h2 {
+    font-size: 30px;
+}
+
+.group-item-data p {
+    background: rgba(221, 241, 248, 0.623);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+.group-item-data p span {
+    color: var(--fifth);
+}
+
+.group-item-data a {
+    padding: 10px 0;
+    background-color: var(--fourth);
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 5px;
+    margin-left: 20%;
+}
+
+.group-first-part a {
+    padding: 10px 0;
+    background-color: var(--fourth);
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 5px;
+}
+

@@ -1,0 +1,27 @@
+
+footer {
+	min-width: 100%;
+	background: var(--first);
+	height: auto;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    font-family: var(--montserrat);
+}
+
+footer header {
+	display: flex;
+}
+
+footer header h1 {
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+}
+
+footer p {
+	color: white;
+	font-weight: bold;
+}
