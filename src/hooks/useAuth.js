@@ -91,7 +91,7 @@ export default function useAuth( setLoading, setMessage, setStatus ) {
     }
 
     const signoutUser = async () => {
-        localStorage.clear();
+        localStorage.removeItem('token');
         await setUserContext();
         navigate('/');
     } 
