@@ -5,6 +5,8 @@ import useUser from '../../hooks/useUser';
 import useAuth from '../../hooks/useAuth';
 import './Profile.css';
 import useFriends from '../../hooks/useFriends';
+import axios from 'axios';
+import pokemons from './pokemons.json';
 
 const Profile = () => {
     const [id, setID] = useState('loading...');
@@ -15,7 +17,7 @@ const Profile = () => {
     const [friends, setFriends] = useState(0);
     const [blogs, setBlogs] = useState(0);
     const [friendsAll, setFriendsAll] = useState([]);
-    const {getUser} = useUser();
+    const {getUser, createPokemons} = useUser();
     const { isAuthenticated } = useAuth();
     const [name, setName] = useState({});
     const [wins, setWins] = useState('loading...');
@@ -23,6 +25,9 @@ const Profile = () => {
     const {getAllFriends} = useFriends();
     const [email, setEmail] = useState('loading...'); 
     const [bloggs, setBloggs ] = useState([]);
+    const [isHeroVisible, setHeroVisible] = useState(false);
+    const [showList, setShowListHeroes] = useState(false);
+    const [hero, setHero] = useState(null);
 
     const loadFriends = async () => {
         const user = await isAuthenticated();
@@ -33,14 +38,30 @@ const Profile = () => {
         }
 
     }
+
+
+    const createHero = async (name, img) => {
+        setHero({name, img, stars:1});
+        setShowListHeroes(false);
+        try {
+            const pokemon = await createPokemons(name, img, id);
+            console.log(pokemon); 
+        } catch(err) {
+            console.log(err.message);
+        }
+    }
+    
+
+
     const load = async () => {
         const user = await isAuthenticated();
-        
+    
         if(user.status) {
             setID(user.payload.id);
             setName({fname : user.payload.user.fname, sname : user.payload.user.sname});
             const userData = await getUser(user.payload.id);
             console.log(userData);
+            setHero(userData.user.hero);
             setAbout(userData.user.about);
             setRegion(userData.user.region);
             setMajor(userData.user.major);
@@ -51,6 +72,7 @@ const Profile = () => {
             setBlogs(userData.user.blogs.length);
             setEmail(userData.user.email);
             setBloggs(userData.user.blogs);
+            
         }
     }
 
@@ -59,7 +81,6 @@ const Profile = () => {
 
     useEffect(() => {
         load();
-        
     }, []);
 
 
@@ -131,6 +152,7 @@ const Profile = () => {
                             
                             target="_blank">Менің кейіпкерім (BETA):</a>
                         </div>
+
                     </div>
                 </div>
                 <div className='profile-personal-about-container'>
@@ -148,6 +170,100 @@ const Profile = () => {
             </div>
             
         </div>
+        
+        {
+            showList &&
+        <div className='create-hero-container-wrapper'>
+            <div className='create-hero-container'>
+                <div 
+                    style={{cursor:'pointer'}}
+                    className='heroes-exit'
+                    onClick={() => {
+                    setShowListHeroes(false);
+                }}>
+                    <img src={'https://cdn1.iconfinder.com/data/icons/everyday-2/64/x_cross_delete_stop-128.png'}/>
+                </div>
+                <div className='choose-hero-container'>
+                    <h1>Өз кейіпкеріңізді таңдаңыз</h1>
+                </div>
+                <div className='heroes-container'>
+                    {pokemons.length > 0 && pokemons.map((val, id) => {
+
+                        return (<div className="card">
+                                    <div className="face">
+                                        <p>{val.name}</p>
+                                        <img 
+                                            alt={val.name}
+                                            src={val.img ? val.img : 'https://vistapointe.net/images/unknown-2.jpg'}
+                                        />
+                                    </div>
+                                    <div className="content">
+                                            <h4>Аты: {val.name}</h4>
+                                            <br/>
+                                            <h4>#{id + 1}</h4>
+                                            <p> 
+                                                Tүрі:{val.type}
+                                            </p>
+                                            <a href='' onClick={(e) => {
+                                                e.preventDefault();
+                                                createHero(val.name, val.img)
+                                            }} className="btn">Таңдау</a>
+                                    </div>
+                    
+                            </div>)
+                    })}
+                
+                </div>
+            </div>
+        </div>
+        
+        }
+
+        { !hero && <div className="my-blog-published-container my-blog-published-container-profile">
+                <h1 className="border-bottom">Менің кейіпкерім (BETA)</h1>
+                <div className='no-hero-container'>
+                    <img src="https://vistapointe.net/images/unknown-2.jpg"/>
+                    
+                    <div className='no-hero-text'>
+                    <p>Сіз әлі өз кейіпкеріңізді таңдаған жоқсыз :D</p>
+                    <p>Ендеше, өз жаңа кейіпкерімізді шығарайық!</p>
+                    
+                    <p className='create-hero-btn' onClick={() => {
+                        setShowListHeroes(true);
+                    }}>Кейіпкерді шығару</p>
+                    </div>
+                   
+                </div>
+        </div>
+            }
+
+{hero && <div className="my-blog-published-container my-blog-published-container-profile">
+                <h1 className="border-bottom">Менің кейіпкерім (BETA)</h1>
+                <h2 style={{color:'var(--first)'}}>Аты: {hero.name}</h2>
+                <div className='no-hero-container'>
+                    <img src={hero.img}/>
+                    <br/>
+                    
+                    <br/>
+                    <div className='progress-bar'>
+                        <div className='current-progress'>
+                        </div>
+                    </div>
+                    <h3>{hero.stars+1} / 100 <i className="fas fa-star" style={{color:"var(--first)"}}></i> </h3>
+                  
+                </div>
+                 
+                <p style={{
+                    marginTop: '-180px',
+                    fontWeight:'bold',
+                    color:'var(--fourth)'
+                }}>
+                        
+                        Өз кейіпкеріңізді біздің платформадағы тапсырмаларды аяқтап, ұпай жинау арқылы дамытыңыз
+                    </p>
+            </div>
+            }
+
         <div className="my-blog-published-container my-blog-published-container-profile">
                 <h1 className="border-bottom">Ерікті жазбалары</h1>
                 <div className="my-blog-published-items-container">

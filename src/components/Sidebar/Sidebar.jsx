@@ -67,7 +67,16 @@ const Sidebar = () => {
                     </NavLink></div>
 
                 </div>
-                
+                <div className='sidebar-item-container'>
+                    <div className='sidebar-logo-container'>
+                    <i class="fas fa-tasks"></i>
+                    </div>
+                    <div className='sidebar-text-container'>
+                    <NavLink to={'/mytasks'}>
+                        <p>Квесттер</p>
+                        </NavLink>
+                    </div>
+                </div>
                 
             </div>
             <div className='sidebar-setting-container'>

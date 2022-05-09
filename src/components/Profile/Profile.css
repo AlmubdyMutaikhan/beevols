@@ -5,8 +5,13 @@
     height: 500px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-between;
-   
+    justify-content: space-between;   
+}
+
+.heroes-exit img{
+    height: 50px;
+    width: 50px;
+    margin-left: 90%;
 }
 
 .profile-container .profile-main-container {
@@ -18,6 +23,43 @@
     flex-direction: column;
 }
 
+.no-hero-container {
+    padding: 20px;
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    height: 500px;
+}
+.no-hero-container img{
+    height: 300px;
+    width: 300px;
+}
+
+.progress-bar {
+    width: 400px;
+    border-radius: 10px;
+    background: rgb(185, 181, 181);
+    height: 30px;
+    margin-left: -100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.current-progress {
+    width: 10px;
+    background: yellow;
+    height: 20px;
+    border-radius: 10px;
+
+}
+
+.no-hero-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 .my-blog-published-container-profile {
     margin-left: 20%;
@@ -25,11 +67,30 @@
     
 }
 
+.no-hero-text {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.no-hero-text p {
+    background: rgba(5, 162, 63, 0.627);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
 
 .profile-main-container .profile-avatar-container {
     height: 60%;
     width: 100%;
     
+}
+
+.no-hero-text .create-hero-btn {
+    background-color: var(--fourth);
+    width: 50%;
+    margin-left: 25%;
+    cursor: pointer;
 }
 
 .profile-avatar-container img {
@@ -159,4 +220,133 @@
     color: white;
     font-family: var(--montserrat);
    
+}
+
+.create-hero-container-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150vh;
+    width: 110%;
+    background: rgba(0, 0, 0, 0.729);
+    z-index: 999;
+}
+
+.create-hero-container-wrapper .create-hero-container {
+   position: absolute;
+    top: 100px;
+    left: 10%;
+   height: 800px;
+    width: 70%;
+    font-family: var(--montserrat);
+}
+
+.create-hero-container .choose-hero-container {
+    color: white;
+}
+
+
+.card {
+    position: relative;
+    width: 200px;
+   
+    height: 200px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+  }
+  
+  .card .face p {
+    font-size: 25px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 0.5em rgb(28, 248, 112);
+  }
+  .card .face {
+    font-family: 'Permanent Marker', cursive;
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transform: translate(-50%, -50%);
+      transition: 0.25s;
+  }
+  
+  .card .face img {
+    height: 170px;
+    width: 170px;
+  }
+  
+  .card:hover .face {
+    opacity: 0;
+  }
+  
+  
+  .card .content {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 20px;
+    text-align: center;
+    transition: 0.25s;
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  
+  .card .content h3 {
+  
+    font-size: 22px;
+    font-weight: 700;
+    color:rgb(37, 196, 232);
+  }
+  .card .content p {
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color:rgb(215, 53, 247);
+  }
+  
+  .card .content a {
+    font-size: 25px;
+    border-radius: 2rem;
+    background: rgb(56, 120, 214);
+    color: white;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    transition: 0.2s;
+  }
+  
+  .card .content a:hover {
+    background-color: white;
+    color: rgb(56, 120, 214);
+    border : 1px solid rgb(56, 120, 214);
+  }
+  
+  .card:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .heroes-container {
+      display: flex;
+      width: 110%;
+      flex-wrap: wrap;
+      height: auto;
+  }
+
+
+
+  .star-img {
+    height: 20px;
+    width: 20px;
 }

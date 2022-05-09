@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {FaFacebookF,FaInstagram, FaTelegramPlane} from 'react-icons/fa';
 import { NavLink } from "react-router-dom";
 import './Header.css';
@@ -10,8 +10,9 @@ const Header = () => {
     const { user, setUser } = useContext(UserContext);
     const { signoutUser } = useAuth();
     const [loggedOut, setLoggedOut] = useState(false);
-
+    
     const handleSignOut = () => {
+
         signoutUser();
         setLoggedOut(true);
         setTimeout(() => {
@@ -42,6 +43,12 @@ const Header = () => {
                         <option value="ru">RU</option>
                         <option value="en">EN</option>
                     </select>
+                </div>
+                <div className="header-user-container">
+                        {user && <div className="bpoints">
+                                    <p>Bpoints: <span>{user.payload.user.bpoints}</span></p>
+                                </div>
+                        }
                 </div>
                 <div className="header-user-container">
                         {user && <div className="volonter-be-btn" onClick={handleSignOut}>

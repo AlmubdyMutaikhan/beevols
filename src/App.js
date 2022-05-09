@@ -22,6 +22,7 @@ import NewGroup from './components/NewGroup/NewBlog';
 import MyProjects from './components/MyProjects/MyProjects';
 import NewProject from './components/newProject/NewProject';
 import MyProject from './components/MyProject/MyProject';
+import MyTasks from './components/MyTasks/MyTask';
 
 function App() {
   const { user, setUser } = useFindUser();
@@ -51,6 +52,7 @@ function App() {
             <Route path='/mygroup/new' element={<NewGroup/>} />
             <Route path='/myprojects/:id/new' element={<NewProject/>} />
             <Route path='/myprojects/:id' element={<MyProjects/>}/>
+            <Route path='/mytasks' element={<MyTasks/>}/>
             <Route path='/myprojects/:id/:projectID' element={<MyProject/>}/>
           </Routes>
         </UserContext.Provider>

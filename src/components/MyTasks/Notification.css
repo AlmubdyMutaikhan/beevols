@@ -1,0 +1,66 @@
+.mytasks-container {
+    margin-top: 130px;
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--montserrat);
+    padding-top: 20px;
+}
+
+
+.mytasks-container h1 {
+    font-size: 40px;
+}
+.mytasks-card-container {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mytasks-item-container {
+    height: 250px;
+    width: 450px;
+    border-radius: 10px;
+    border: 3px solid var(--fifth);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.mytasks-item-container h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.mytasks-item-container p {
+    background: rgba(210, 241, 253, 0.623);
+    padding: 20px;
+    height: 70%;
+    border-radius: 10px;
+}
+
+.mytasks-item-container a {
+    padding: 10px 0;
+    background-color: var(--fourth);
+    border-radius: 10px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 5px;
+    margin-left: 70%;
+    cursor: pointer;
+}
+
+
+.read {
+    opacity: 0.8;
+    border: 3px solid rgba(36, 112, 226, 0.589);
+}

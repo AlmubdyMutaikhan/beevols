@@ -13,6 +13,7 @@
     font-family: var(--montserrat);
 }
 
+
 .header-logo-container {
     margin-left: 20px;
 }
@@ -76,6 +77,19 @@
     line-height: 220%;
     cursor: pointer;
 }
+
+
+.bpoints {
+    font-weight: bold;
+    cursor: pointer;   
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.bpoints span {
+    color: var(--first);
+}
+
 
 .header-user-container .volonter-be-btn:hover {
     background-color: var(--fifth);

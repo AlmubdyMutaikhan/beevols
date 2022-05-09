@@ -23,6 +23,16 @@ const useUser = () => {
         }
     }
 
+    const createPokemons = async (name, img, id) => {
+        try {
+            const res = await axios.post('/user/pokemon', {name, img, id});
+            console.log(res);
+            return res;
+        } catch(err) {
+            throw new Error(err.message);
+        }
+    }
+
 
     const getAllUsers = async () => {
         try {
@@ -35,7 +45,8 @@ const useUser = () => {
     return {
         updateUser,
         getUser,
-        getAllUsers
+        getAllUsers,
+        createPokemons
     }
 }
 
