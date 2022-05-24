@@ -264,6 +264,11 @@ const Profile = () => {
             </div>
             }
 
+
+        <div className='events-recomendation-list'>
+            <h1>Сізге ұнауы мүмкін кештер: </h1>
+        </div>
+
         <div className="my-blog-published-container my-blog-published-container-profile">
                 <h1 className="border-bottom">Ерікті жазбалары</h1>
                 <div className="my-blog-published-items-container">

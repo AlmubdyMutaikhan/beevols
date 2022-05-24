@@ -37,6 +37,7 @@
 
 .navbar-container .navbar-items-container ul li a {
     color: var(--first);
+    font-family: var(--montserrat);
     font-size: 18px;
     font-weight: bold;
     transition: 0.1s ease-out;

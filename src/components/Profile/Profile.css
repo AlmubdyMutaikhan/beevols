@@ -14,6 +14,21 @@
     margin-left: 90%;
 }
 
+
+.events-recomendation-list {
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    font-family: var(--montserrat);
+}
+
+.events-recomendation-list .events-recomendation-items-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .profile-container .profile-main-container {
     width: 350px;
     height: 100%;
@@ -350,3 +365,123 @@
     height: 20px;
     width: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    width: 1200px;
+    min-width: 900px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .card {
+    position: relative;
+}
+
+.container .card .face {
+    height: 300px;
+    width: 200px;
+    transition: 0.5s;
+    color: white;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    display: flex;
+    background: #333;
+    justify-content: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+.container .card .face.face1 .content {
+    text-align: center;
+    opacity: 0.2;
+    transition: 0.3s;
+}
+.container .card .face.face1 .content h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+}
+.container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+.container .card:hover .face.face1 {
+    transform: translateY(0px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    box-shadow: 0px 0px 25px rgb(255, 255, 66);
+}
+
+.container .card:hover .face.face1.one {
+    background: url('https://www.jesus.ch/sites/default/files/media/13761-Hunger.jpg') ;
+}
+
+.container .card:hover .face.face1.two {
+    background: url('https://klachtkinderopvang.nl/wp-content/uploads/2018/03/Kinderuitbuiting.jpg') ;
+}
+
+.container .card:hover .face.face1.three {
+    background: url('https://www.pdfdrive.com/assets/img/gp/10.jpg.pagespeed.ce.1SI_JjLWVG.jpg') ;
+}
+
+.container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(-200px);
+}
+
+.container .card:hover .face.face2 {
+    margin-top: 20px;
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2 .content {
+    color: black;
+}
+
+.container .card:hover .face.face2 .content p, a {
+    font-size: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.container .card:hover .face.face2 .content a {
+    box-sizing: border-box;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.container .card:hover .face.face2 .content p {
+    margin-bottom: 20px;
+}
+
+.event-rec-item {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+}
+
+

@@ -27,7 +27,7 @@ const Sidebar = () => {
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
                         <NavLink to={'/profile'}>
-                        <i class="fas fa-address-card"></i>
+                        <i class="fas fa-address-card" style={{fontSize:'40px'}}></i>
                         </NavLink>
                     </div>
                     <div className='sidebar-text-container'>

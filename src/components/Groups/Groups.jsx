@@ -4,6 +4,39 @@ import useAuth from '../../hooks/useAuth';
 import useGroup from '../../hooks/useGroup';
 import './Group.css';
 
+const interests = [
+    {
+        name : 'IT',
+        keys: ['айти', 'it', 'programming', 'programing','computer', 'cloud', 'web','dev','design','програ','біл']
+    },
+    {
+        name : 'medicine',
+        keys: ['medicine','медицина','health','здоровье','денсаулық', 'әлеумет', 'соц']
+    },
+    {
+        name : 'sport',
+        keys: ['sport','спорт','футбол','баскет']
+    }
+]
+
+
+const converter = (interest) => {
+    let suggestedInterest = ''
+    interest = interest.toLowerCase()
+    interests.map(i => {
+        i.keys.map(j => {
+            j = j.toLowerCase()
+           // console.log(j, interest)
+            if(interest.startsWith(j) || interest === j) {
+                suggestedInterest = i.name            
+            }
+        })
+    })
+
+    return suggestedInterest
+}
+
+
 const Groups = () => {
     const { getAllGroups } = useGroup();
     const [groups, setGroups] = useState([]);
@@ -12,6 +45,7 @@ const Groups = () => {
     const navigate = useNavigate();
     const {isAuthenticated} = useAuth();
     const [userInterest, setUserInteres] = useState('');
+    const [recGroups, setRecGroups] = useState([])
 
     const load = async () => {
         try {
@@ -25,15 +59,25 @@ const Groups = () => {
             
             setGroupNames(groupNamesTemp)
             setGroups(data);
+            recommendedGroups(data, user.payload.user.major)
         } catch(err) {
             console.log(err);
         }
     }
 
-    const recommendedGroups = () => {
-        
-    }
+    const recommendedGroups = (groups, interest) => {
+        const recomendGroups = []
 
+        groups.map(group => {
+            //console.log(group.direction + " " +  interest)
+            
+            if(converter(group.direction) === converter(interest)) {
+                recomendGroups.push(group)        
+            }
+        })
+
+        setRecGroups(recomendGroups)    
+    }
 
     const handleKeyPress = (e) => { 
         let searchGroup = e.target.value.trim();
@@ -186,7 +230,7 @@ const Groups = () => {
                 <h1>Сізге ұнауы мүмкін:</h1>
             </div>
             <div className="groups-card-container">
-                {groups.map((group, key) => (
+                {recGroups.map((group, key) => (
                     <div className="groups-item-container" key={key}>
                         <div className='group-first-part'>
                                 <div className='group-item-avatar'>
