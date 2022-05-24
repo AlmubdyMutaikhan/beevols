@@ -18,6 +18,8 @@ const useFindUser = () => {
                 }
             } catch(err) {
                 console.log(err);
+                localStorage.removeItem('token');
+                window.location.reload();
                 setUser({status : false, payload : null});
             }
     }
