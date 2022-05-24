@@ -10,6 +10,7 @@ const useFindUser = () => {
             
             try {
                 const status = await axios.get('/auth/payload', {params : { token }});
+                
                 if(status.data.msg === 'ok' && status.data.payload) {
                     setUser({status : true, payload : status.data.payload});
                 } else {
@@ -22,7 +23,6 @@ const useFindUser = () => {
     }
 
     useEffect(() => {
-        console.log('i am here');
         retrieveUserData();
     }, []);
 

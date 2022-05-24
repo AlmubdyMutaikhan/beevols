@@ -60,6 +60,26 @@ a {
     align-items: center;
     font-weight: bold;
 }
+
+
+.suggestionList {
+    height: auto;
+    width: 300px;
+    margin-left: 83%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestionList .suggestion-item {
+    width: 100%;
+    border: 1px solid black;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
 .group-metrics-item i {
     font-size: 30px;
     color: var(--fourth);
