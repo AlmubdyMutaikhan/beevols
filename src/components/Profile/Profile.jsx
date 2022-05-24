@@ -7,6 +7,12 @@ import './Profile.css';
 import useFriends from '../../hooks/useFriends';
 import axios from 'axios';
 import pokemons from './pokemons.json';
+import Flickity from 'react-flickity-component';
+
+
+const flickityOptions = {
+    initialIndex: 2
+}
 
 const Profile = () => {
     const [id, setID] = useState('loading...');
@@ -267,6 +273,21 @@ const Profile = () => {
 
         <div className='events-recomendation-list'>
             <h1>Сізге ұнауы мүмкін кештер: </h1>
+
+            <Flickity
+                className={'carousel'} // default ''
+                elementType={'div'} // default 'div'
+                options={flickityOptions} // takes flickity options {}
+                disableImagesLoaded={false} // default false
+                reloadOnUpdate // default false
+                static // default false
+                >
+                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
+                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
+                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
+            </Flickity>
+
+
         </div>
 
         <div className="my-blog-published-container my-blog-published-container-profile">
