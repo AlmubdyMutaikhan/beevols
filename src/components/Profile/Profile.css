@@ -8,6 +8,51 @@
     justify-content: space-between;   
 }
 
+
+.event-item {
+    height: auto;
+    display: flex;
+    width: 100%;
+}
+
+.event-item .event-bg img {
+    height: 100%;
+    width: 100%;
+}
+
+.event-item .event-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.event-text .event-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.event-text .event-time {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--first);
+}
+
+.event-desc span {
+    background-color: var(--first);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+    margin-left: 70%;
+}
+
+.event-desc {
+    font-weight: bold;
+    padding: 20px;
+}
+
+
 .heroes-exit img{
     height: 50px;
     width: 50px;

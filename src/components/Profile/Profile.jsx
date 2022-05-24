@@ -8,7 +8,7 @@ import useFriends from '../../hooks/useFriends';
 import axios from 'axios';
 import pokemons from './pokemons.json';
 import Flickity from 'react-flickity-component';
-
+import CardColored from '../Cards/CardColored/CardColored';
 
 const flickityOptions = {
     initialIndex: 2
@@ -44,7 +44,6 @@ const Profile = () => {
         }
 
     }
-
 
     const createHero = async (name, img) => {
         setHero({name, img, stars:1});
@@ -273,7 +272,9 @@ const Profile = () => {
 
         <div className='events-recomendation-list'>
             <h1>Сізге ұнауы мүмкін кештер: </h1>
-
+            <br/>
+            <br/>
+            <br/>
             <Flickity
                 className={'carousel'} // default ''
                 elementType={'div'} // default 'div'
@@ -282,11 +283,67 @@ const Profile = () => {
                 reloadOnUpdate // default false
                 static // default false
                 >
-                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
-                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
-                <img src="https://avatars.mds.yandex.net/i?id=f3bdf51cfb726139fab5cd9c8b837a58-4394431-images-thumbs&n=13"/>
+               <div className='event-item'>
+                    <div className='event-bg'>
+                        <img src="https://sxodim.com/uploads/posts/2022/05/23/optimized/73a7577aee060fd69025fd68ae44153b_352x198-q-85.jpg" />
+                    </div>
+                    <div className='event-text'>
+                        <div className='event-title'>
+                        Stand Up концерт
+                        </div>
+                        <div className='event-time'>
+                             24 мая   
+                        </div>
+                        <div className='event-desc'>
+                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
+                        <br/>
+                        <br/>
+                        <span> Толығырақ</span>
+                        </div>
+                    </div>
+               </div>
+               <div className='event-item'>
+                    <div className='event-bg'>
+                        <img src="https://sxodim.com/uploads/posts/2022/05/24/optimized/f7c589a921022de0f00d065957660a3d_352x198-q-85.jpg" />
+                    </div>
+                    <div className='event-text'>
+                        <div className='event-title'>
+                        Stand Up концерт
+                        </div>
+                        <div className='event-time'>
+                             24 мая   
+                        </div>
+                        <div className='event-desc'>
+                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
+                        <br/>
+                        <br/>
+                        <span> Толығырақ</span>
+                        </div>
+                    </div>
+               </div>
+               <div className='event-item'>
+                    <div className='event-bg'>
+                        <img src="https://sxodim.com/uploads/posts/2022/05/24/optimized/f2bfefab2f5966b6bf5c59fd5e22ab2c_352x198-q-85.jpg" />
+                    </div>
+                    <div className='event-text'>
+                        <div className='event-title'>
+                        Stand Up концерт
+                        </div>
+                        <div className='event-time'>
+                             24 мая   
+                        </div>
+                        <div className='event-desc'>
+                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
+                        <br/>
+                        <br/>
+                        <span> Толығырақ</span>
+                        </div>
+                        
+                    </div>
+               </div>
             </Flickity>
-
+            <br/>
+            <br/>
 
         </div>
 
