@@ -51,7 +51,7 @@ const ProfileEdit = () => {
             const user = await isAuthenticated();
             if(user.status) {
                 setLoading(true);
-                await updateUser(user.payload.id, { region, about, major, date, wins, avatarURL : localStorage.getItem('img')});
+                await updateUser(user.payload.id, { region, about, major, date, wins, avatarURL : localStorage.getItem('img') ? localStorage.getItem('img') : avatarURL});
                 setUpdated(true);
                 setLoading(false);
                 
