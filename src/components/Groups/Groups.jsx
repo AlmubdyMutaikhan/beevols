@@ -7,7 +7,7 @@ import './Group.css';
 const interests = [
     {
         name : 'IT',
-        keys: ['айти', 'it', 'programming', 'programing','computer', 'cloud', 'web','dev','design','програ','біл']
+        keys: ['айти', 'it', 'edu', 'progra', 'software', 'engine', 'computer', 'cloud', 'web','dev','design','програ','біл']
     },
     {
         name : 'medicine',
@@ -16,6 +16,10 @@ const interests = [
     {
         name : 'sport',
         keys: ['sport','спорт','футбол','баскет']
+    },
+    {
+        name : 'ecology',
+        keys: ['eco','environ', 'clean', 'green', 'таза', 'чист', 'health','здоровье','денсаулық', 'әлеумет', 'соц']
     }
 ]
 
@@ -46,6 +50,16 @@ const Groups = () => {
     const {isAuthenticated} = useAuth();
     const [userInterest, setUserInteres] = useState('');
     const [recGroups, setRecGroups] = useState([])
+
+    const renderGroupName = (str) => {
+
+        console.log(str, str.length);
+        if(str.length < 14) {
+            return str;
+        } else {
+            return str.slice(0,13) + "\n" + str.slice(13, str.length);
+        }
+    }
 
     const load = async () => {
         try {
@@ -190,7 +204,7 @@ const Groups = () => {
                                 <img src={group.avatarURL} />
                             </div>
                             <div className='group-item-data'>
-                                <h2>{group.name}</h2>
+                                <h2>{ renderGroupName(group.name) }</h2>
                                 <p><span>Бағыт: </span>{`${group.direction}`}</p>
                             </div>
                         </div>
@@ -237,7 +251,7 @@ const Groups = () => {
                                 <img src={group.avatarURL} />
                             </div>
                             <div className='group-item-data'>
-                                <h2>{group.name}</h2>
+                                <h2>{ renderGroupName(group.name) }</h2>
                                 <p><span>Бағыт: </span>{`${group.direction}`}</p>
                             </div>
                         </div>

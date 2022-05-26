@@ -11,7 +11,7 @@ import Flickity from 'react-flickity-component';
 import CardColored from '../Cards/CardColored/CardColored';
 
 const flickityOptions = {
-    initialIndex: 2
+    initialIndex: 0
 }
 
 const Profile = () => {
