@@ -42,11 +42,24 @@ const useUser = () => {
             throw new Error(err.response.data);
         }
     }
+
+
+    const getEvents = async () => {
+        try {
+            const res = await axios.get('/events');
+            return res.data && res.data.events ?  res.data.events : null;
+        } catch(err) {
+            throw new Error(err.response.data);
+        }
+    }
+
+
     return {
         updateUser,
         getUser,
         getAllUsers,
-        createPokemons
+        createPokemons,
+        getEvents
     }
 }
 

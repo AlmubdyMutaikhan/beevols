@@ -34,6 +34,8 @@ const Profile = () => {
     const [isHeroVisible, setHeroVisible] = useState(false);
     const [showList, setShowListHeroes] = useState(false);
     const [hero, setHero] = useState(null);
+    const {getEvents} = useUser();
+    const [events, setEvents] = useState([]);
 
     const loadFriends = async () => {
         const user = await isAuthenticated();
@@ -57,10 +59,17 @@ const Profile = () => {
     }
     
 
-
+    const loadEvents = async () => {
+        try {
+            const events = await getEvents();
+            setEvents(events);
+        } catch(err) {
+            console.log(err);
+        }
+    }
     const load = async () => {
         const user = await isAuthenticated();
-    
+        
         if(user.status) {
             setID(user.payload.id);
             setName({fname : user.payload.user.fname, sname : user.payload.user.sname});
@@ -77,6 +86,7 @@ const Profile = () => {
             setBlogs(userData.user.blogs.length);
             setEmail(userData.user.email);
             setBloggs(userData.user.blogs);
+            loadEvents();
             
         }
     }
@@ -283,64 +293,33 @@ const Profile = () => {
                 reloadOnUpdate // default false
                 static // default false
                 >
-               <div className='event-item'>
-                    <div className='event-bg'>
-                        <img src="https://sxodim.com/uploads/posts/2022/05/23/optimized/73a7577aee060fd69025fd68ae44153b_352x198-q-85.jpg" />
-                    </div>
-                    <div className='event-text'>
-                        <div className='event-title'>
-                        Stand Up концерт
+                {events.map(event => {
+                    return (
+                        <div className='event-item'>
+                                <div className='event-bg'>
+                                    <img src={event.img} />
+                                </div>
+                                <div className='event-text'>
+                                    <div className='event-title'>
+                                    {event.title}
+                                    </div>
+                                    <div className='event-time'>
+                                        {event.date}
+                                    </div>
+                                    <div className='event-desc'>
+                                    {event.info}
+                                    <br/>
+                                    <br/>
+                                    <span> <a style={{
+                                        fontFamily:'var(--montserrat)'
+                                    }} href="https://sxodim.com/">Толығырақ</a> </span>
+                                    </div>
+                                </div>
                         </div>
-                        <div className='event-time'>
-                             24 мая   
-                        </div>
-                        <div className='event-desc'>
-                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
-                        <br/>
-                        <br/>
-                        <span> Толығырақ</span>
-                        </div>
-                    </div>
-               </div>
-               <div className='event-item'>
-                    <div className='event-bg'>
-                        <img src="https://sxodim.com/uploads/posts/2022/05/24/optimized/f7c589a921022de0f00d065957660a3d_352x198-q-85.jpg" />
-                    </div>
-                    <div className='event-text'>
-                        <div className='event-title'>
-                        Stand Up концерт
-                        </div>
-                        <div className='event-time'>
-                             24 мая   
-                        </div>
-                        <div className='event-desc'>
-                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
-                        <br/>
-                        <br/>
-                        <span> Толығырақ</span>
-                        </div>
-                    </div>
-               </div>
-               <div className='event-item'>
-                    <div className='event-bg'>
-                        <img src="https://sxodim.com/uploads/posts/2022/05/24/optimized/f2bfefab2f5966b6bf5c59fd5e22ab2c_352x198-q-85.jpg" />
-                    </div>
-                    <div className='event-text'>
-                        <div className='event-title'>
-                        Stand Up концерт
-                        </div>
-                        <div className='event-time'>
-                             24 мая   
-                        </div>
-                        <div className='event-desc'>
-                        24 мая в 20:00, Казахстан, Нур-Султан (Астана), улица Динмухамеда Кунаева, 12/1
-                        <br/>
-                        <br/>
-                        <span> Толығырақ</span>
-                        </div>
-                        
-                    </div>
-               </div>
+                    )
+                })}
+               
+           
             </Flickity>
             <br/>
             <br/>
