@@ -6,6 +6,8 @@ import useAuth from "../../hooks/useAuth";
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
 import Notification from "../Notification/Notification";
+
+
 const Header = () => {
     const { user, setUser } = useContext(UserContext);
     const { signoutUser } = useAuth();
@@ -22,6 +24,7 @@ const Header = () => {
 
     return(
         <div className="header-container">
+                   
             <div className="header-logo-container">
                 <h1>Bee Volunteers</h1>
             </div>
@@ -44,6 +47,7 @@ const Header = () => {
                         <option value="en">EN</option>
                     </select>
                 </div>
+              
                 <div className="header-user-container">
                         {user && <div className="bpoints">
                                     <p>Bpoints: <span>{user.payload.user.bpoints}</span></p>

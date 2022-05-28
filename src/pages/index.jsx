@@ -14,15 +14,15 @@ const Index = () => {
         <>
             <Gallery/>
             <Info/>
-            <Choices/>
+            
             <BeVolunteer/>
-            <Directions/>
+          
             <EventCalendar/>
             <br/>
             <br/>
             <br/>
 
-            <WannaBe/>
+         
             <Footer/>
         </>
     )

@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
 
 const Navbar = () => {
-    /*const { isAuthenticated } = useAuth();
-    const [isAuth, setAuth] = useState(false);
+    const [isVisibleNavbar, setVisible] = useState(false);
 
-    useEffect(() => {
-        const checkAuth = async () => {
-            const status = await isAuthenticated();
-            setAuth(status);
+    const toggleMenu = () => {
+        const navbar = document.getElementById('navbar-items-container');
+        if(!isVisibleNavbar) {
+            navbar.style.transform = "translateX(0)";
+            navbar.style.display = "block";
+            setVisible(true);
+        } else {
+            setVisible(false);
+            navbar.style.display = "none";
         }
-        checkAuth();
-    }, []);*/
+    }
 
-
-    
     return(
         <div className="navbar-container">
-            <div className="navbar-items-container">
+     
+            <div id="navbar-items-container">
                 <ul>
                     <li>
                         <NavLink exact to="/">
@@ -52,6 +54,8 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
+            <i className="fad fa-hamburger" id="navbar-mobile-menu" onClick={toggleMenu}></i>
+         
         </div>
     )
 }
