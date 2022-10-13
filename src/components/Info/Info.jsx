@@ -35,16 +35,16 @@ const Info = () => {
                     <img src="https://cdn3.iconfinder.com/data/icons/unigrid-phantom-vehicles-vol-3/60/001_130_rocket_launch_start_space_ship_cosmos_transport_exploration-128.png"/>
                 </div>
                 <div className="hot-news-item">
-                    <p className="news-title">Балаларға айти курстарын оқыту</p>
-                    <p>18.04.22</p>
+                    <p className="news-title">Балаларға IT курстарын оқыту</p>
+                    <p>10.10.22</p>
                 </div>
                 <div className="hot-news-item">
                     <p className="news-title">Khan academy курстарын аудару</p>
-                    <p>15.04.22</p>
+                    <p>28.09.22</p>
                 </div>
                 <div className="hot-news-item">
                     <p className="news-title">Шетел тілдерін оқытуға көмектесу</p>
-                    <p>10.04.22</p>
+                    <p>15.09.22</p>
                 </div>
             </div>
         </div>

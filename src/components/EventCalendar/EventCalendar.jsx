@@ -32,7 +32,7 @@ const EventCalendar = () => {
                     <CardEvent 
                         title={'Буккроссинг'}
                         index={1}
-                        date={'25.04.22'}
+                        date={'20.10.22'}
                         place={'Қарағанды қаласы, ХББ НЗМ мектебі'}
                         logo={'https://cdn3.iconfinder.com/data/icons/education-science-vol-1-1/512/books_book_glasses_reading-128.png'}
                         desc={
@@ -45,54 +45,22 @@ const EventCalendar = () => {
                     />
                 </div>
 
+              
+        
                 <div class="slide second">
                 <CardEvent 
-                        title={'9-мамыр - Жеңіс күні'}
-                        index={2}
-                        date={'09.05.22'}
-                        place={'Жеңіс паркі'}
-                        logo={'https://cdn4.iconfinder.com/data/icons/military-vol-2-1/4000/military_world_war_honor_medals-128.png'}
-                        desc={
-                            `9-мамыр күні Ұлы Отан соғысының ардегерлеріне көмектесуге шақырамыз`
-                        }
-
-                        link={'/'}
-                        onClick={showNot}
-                        bgImg={`https://gurk.kz/uploads/images/b5/67/87/b5467b871d96deeb06850086b5a42e86.jpg`}
-                    />
-                </div>
-        
-                <div class="slide third">
-                <CardEvent 
-                        title={'9-мамыр - Жеңіс күні'}
-                        index={3}
-                        date={'09.05.22'}
-                        place={'Жеңіс паркі'}
-                        logo={'https://cdn4.iconfinder.com/data/icons/military-vol-2-1/4000/military_world_war_honor_medals-128.png'}
-                        desc={
-                            `9-мамыр күні Ұлы Отан соғысының ардегерлеріне көмектесуге шақырамыз`
-                        }
-
-                        link={'/'}
-                        onClick={showNot}
-                        bgImg={`http://sc0006.zerenda.aqmoedu.kz/arc/attach/667/249595/img4680.jpg`}
-                    />
-                </div>
-        
-                <div class="slide fourth">
-                <CardEvent 
-                        title={'9-мамыр - Жеңіс күні'}
+                        title={'IT бағдарламасын оқыту'}
                         index={4}
-                        date={'09.05.22'}
-                        place={'Жеңіс паркі'}
-                        logo={'https://cdn4.iconfinder.com/data/icons/military-vol-2-1/4000/military_world_war_honor_medals-128.png'}
+                        date={'25.10.22'}
+                        place={'Балалар сарайы-2'}
+                        logo={'https://cdn1.iconfinder.com/data/icons/luchesa-2/128/Computer-64.png'}
                         desc={
-                            `9-мамыр күні Ұлы Отан соғысының ардегерлеріне көмектесуге шақырамыз`
+                            `8-14 жас аралығындағы балаларға IT курстарынан шеберлік оқытулар жүргізу`
                         }
 
                         link={'/'}
                         onClick={showNot}
-                        bgImg={`http://sc0006.zerenda.aqmoedu.kz/arc/attach/667/249595/img4680.jpg`}
+                        bgImg={`https://www.gov.kz/uploads/2022/9/16/794b9469d29ad64e2f4d362b6add2b26_original.48189.jpg`}
                     />
                 </div>
 
@@ -104,7 +72,9 @@ const EventCalendar = () => {
                 </div>
             </div>
         </div>
-        {not && <Notification  title={'Іс-шара'} msg={'Сіз іс-шараға сәтті тіркелдіңіз, алдағы уақытта біздің хабарландыруларымызды күтіңіз'} bgColor={'green'}/>}
+        {not && <Notification  title={'Іс-шара'} msg={`
+        Іс-шараға қатысу үшін сіз ең алдымен порталға тіркелуіңіз немесе кіруіңіз қажет. Порталға тіркелу үшін ерікті болу тетігін басыңыз`} 
+        bgColor={'odd'}/>}
     </div>
     )
 

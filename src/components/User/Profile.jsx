@@ -131,7 +131,7 @@ const UserProfile = () => {
                             Жетістіктер: <span>{wins}</span>
                         </div>
                         <br/>
-                        <div className='profile-personal-item'>
+                        {/*<div className='profile-personal-item'>
                             <a href='https://my-pokemon-qwant-app.herokuapp.com/'
                                 style={{
                                     background:'blue',
@@ -141,7 +141,7 @@ const UserProfile = () => {
                                 }}
                             
                             target="_blank">Менің кейіпкерім (BETA):</a>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
                 <div className='profile-personal-about-container'>

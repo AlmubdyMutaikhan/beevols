@@ -92,6 +92,7 @@ const ProfileEdit = () => {
             });
         }
     }
+    
     const fileHandler = (e) => {
         e.preventDefault();
         const file = e.target.files[0];

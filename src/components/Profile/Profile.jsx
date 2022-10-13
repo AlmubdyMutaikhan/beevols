@@ -35,7 +35,20 @@ const Profile = () => {
     const [showList, setShowListHeroes] = useState(false);
     const [hero, setHero] = useState(null);
     const {getEvents} = useUser();
-    const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([
+        {
+            img:'https://pflk.kz/news_foto/4d46023dd40d17e27feae45a71ed7279.jpg',
+            title:'Футболдан турнир',
+            date:'22-10-2022',
+            info:'7-10 жас аралығындағы балалар арасында футболдан турнир өткізуге ат салысу'
+        },
+        {
+            img:'https://www.gov.kz/uploads/2022/9/16/794b9469d29ad64e2f4d362b6add2b26_original.48189.jpg',
+            title:'Khan academy курсын қазақ тіліне аудару',
+            date:'25-10-2022',
+            info:'Khan academy курстарын, яғни математика, физика, химия, биология сабақтарын қазақ тіліне аудару'
+        }
+    ]);
 
     const loadFriends = async () => {
         const user = await isAuthenticated();
@@ -59,14 +72,7 @@ const Profile = () => {
     }
     
 
-    const loadEvents = async () => {
-        try {
-            const events = await getEvents();
-            setEvents(events);
-        } catch(err) {
-            console.log(err);
-        }
-    }
+    
     const load = async () => {
         const user = await isAuthenticated();
         
@@ -86,7 +92,7 @@ const Profile = () => {
             setBlogs(userData.user.blogs.length);
             setEmail(userData.user.email);
             setBloggs(userData.user.blogs);
-            loadEvents();
+          
             
         }
     }
@@ -156,7 +162,7 @@ const Profile = () => {
                             Жетістіктер: <span>{wins}</span>
                         </div>
                         <br/>
-                        <div className='profile-personal-item'>
+                        {/*<div className='profile-personal-item'>
                             <a href='https://my-pokemon-qwant-app.herokuapp.com/'
                                 style={{
                                     background:'blue',
@@ -166,7 +172,7 @@ const Profile = () => {
                                 }}
                             
                             target="_blank">Менің кейіпкерім (BETA):</a>
-                        </div>
+                            </div>*/}
 
                     </div>
                 </div>
@@ -186,7 +192,7 @@ const Profile = () => {
             
         </div>
         
-        {
+        {/*
             showList &&
         <div className='create-hero-container-wrapper'>
             <div className='create-hero-container'>
@@ -231,10 +237,10 @@ const Profile = () => {
                 </div>
             </div>
         </div>
-        
+        */
         }
 
-        { !hero && <div className="my-blog-published-container my-blog-published-container-profile">
+        { /*!hero && <div className="my-blog-published-container my-blog-published-container-profile">
                 <h1 className="border-bottom">Менің кейіпкерім (BETA)</h1>
                 <div className='no-hero-container'>
                     <img src="https://vistapointe.net/images/unknown-2.jpg"/>
@@ -250,9 +256,9 @@ const Profile = () => {
                    
                 </div>
         </div>
-            }
+                */ }
 
-{hero && <div className="my-blog-published-container my-blog-published-container-profile">
+{/*hero && <div className="my-blog-published-container my-blog-published-container-profile">
                 <h1 className="border-bottom">Менің кейіпкерім (BETA)</h1>
                 <h2 style={{color:'var(--first)'}}>Аты: {hero.name}</h2>
                 <div className='no-hero-container'>
@@ -277,11 +283,14 @@ const Profile = () => {
                         Өз кейіпкеріңізді біздің платформадағы тапсырмаларды аяқтап, ұпай жинау арқылы дамытыңыз
                     </p>
             </div>
-            }
+            */}
 
-
+            <br/>
+            <br/><br/>
+            <br/>
+            <br/>
         <div className='events-recomendation-list'>
-            <h1>Сізге ұнауы мүмкін кештер: </h1>
+            <h1>Сізге ұнауы мүмкін волонтерлік жобалар: </h1>
             <br/>
             <br/>
             <br/>

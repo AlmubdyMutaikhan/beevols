@@ -16,11 +16,14 @@ const Index = () => {
             <Info/>
             
             <BeVolunteer/>
-          
+            <br/>
+            <Directions/>
+            <br/>
             <EventCalendar/>
             <br/>
             <br/>
             <br/>
+            <WannaBe/>
 
          
             <Footer/>

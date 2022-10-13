@@ -14,12 +14,14 @@
     height: 100%;
     background-color: white;
     display: flex;
+    font-family: var(--montserrat);
     justify-content: space-between;
 }
     
 .rsrcs-container .card-colored-container {
     height: 100%;
     width: 47%;
+    font-family: var(--montserrat);
     background-color: var(--second);
     border-radius: 10px;
     padding-left: 20px;
@@ -33,6 +35,7 @@
 .hot-news-text {
     display: flex;
     justify-content: center;
+    font-family: var(--montserrat);
     align-items: center;
 }
 .hot-news-text img {
@@ -60,6 +63,7 @@
     font-size: 15px;
     font-weight: bold;
     z-index: 11;
+    font-family: var(--montserrat);
 }
 
 .hot-news-container {
@@ -75,6 +79,7 @@
 .hot-news-container h2 {
     font-size: 2rem;
     margin-bottom: 5px;
+    font-family: var(--montserrat);
 }
 
 .hot-news-container p {

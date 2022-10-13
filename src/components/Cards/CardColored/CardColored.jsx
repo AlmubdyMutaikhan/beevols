@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const CardColored = ({ title, desc, style, bgImg, index, link, intro, logo }) => {
     return(
-        <div className="slide-content-container">
+        <div className="slide-content-container" style={style}>
                         <div className="slide-content-text">
                             <div className="slide-content-index">
                                 <h1><span>{index}/</span>4</h1>

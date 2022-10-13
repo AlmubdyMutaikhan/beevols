@@ -19,15 +19,12 @@ const Gallery = () => {
                             Ерікті болу ерлікпен тең, өз Қарағанды өңіріңді дамытуға үлес қосуыңа әрқашан көмектесеміз. Және де
                             сол мақсатты орындауда біздің жаңа веб-сайтымызды қарсы ал!
                             `}
-                            style={{
-                                backgroundSize:'cover'
-                            }}
                             index={1}
                             logo={'https://cdn4.iconfinder.com/data/icons/new-year-color-line/64/15-confetti-128.png'}
                             link={'/auth'}
                             intro={`
                             Өз еркімен қоғамға пайдасын тигізуді көздейтін еріктілердің қатары жыл санап артып келеді. Бүгінде әлем халқының 970 миллионы волонтер болса, оның ішінде әрбір сегізінші қазақстандық еріктілер қатарын толықтыруда`}
-                            bgImg={'https://bilimdinews.kz/wp-content/uploads/2020/12/WhatsApp-Image-2020-12-08-at-18.39.08.jpeg'}
+                            bgImg={'https://baigenews.kz/upload/storage/ee/eebd7680145e4ce0de1735fb8a7f6033.JPG'}
                     />
                 </div>
 
@@ -55,7 +52,7 @@ const Gallery = () => {
                             desc={`
                                Ерікті топтары біздің платформаға тіркелу арқылы қазіргі таңда қызу жұмыс жасап, Қарағанды өңірінің волонтерлік қызмет саласын әрі қарай дамытып жатыр
                             `}
-                            bgImg={'https://www.inform.kz/radmin/fotofiles/2022/09/17/2209171800313740f.jpg'}
+                            bgImg={'https://arnapress.kz/storage/articles/converted/117600.jpg'}
                             logo={'https://cdn3.iconfinder.com/data/icons/business-round-set-1/128/COLLABORATE-256.png'}
                             link={'/auth'}
                             intro={`

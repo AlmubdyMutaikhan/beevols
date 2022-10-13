@@ -93,14 +93,14 @@ const [likes, setLikes] = useState(0);
                         <div className='group-profile-data-item'>
                             <i className="fad fa-users"></i>
                             <p>Ерікті</p>
-                            <h2>{groupData.members.length}</h2>
+                            <h2>25</h2>
                         </div>
                         <div className='group-profile-data-item'>
                         <i className="fas fa-rocket"></i>
                             <NavLink to={'/myprojects/'+params.id}>
                                 <p style={{color:'black'}}>Жобалар</p>
                             </NavLink>
-                            <h2>{groupData.projects.length}</h2>
+                            <h2>{3}</h2>
                         </div>
                     </div>
                 </div>
