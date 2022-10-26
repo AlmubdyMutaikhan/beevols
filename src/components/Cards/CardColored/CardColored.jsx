@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import './CardColored.css';
 import { NavLink } from "react-router-dom";
+import { LangContext } from "../../../context/lang";
+import getWord from "../../../context/hf";
 
 const CardColored = ({ title, desc, style, bgImg, index, link, intro, logo }) => {
+    const [words, setWords] = useState([
+        {more:'Толығырақ'},
+        {more:'Подробнее'},
+        {more:'Read more'},
+    ])
+    const { lang, setLang } = useContext(LangContext);
+
     return(
         <div className="slide-content-container" style={style}>
                         <div className="slide-content-text">
@@ -20,7 +29,7 @@ const CardColored = ({ title, desc, style, bgImg, index, link, intro, logo }) =>
                             </div>
                             <div className="slide-content-btn">
                                 <NavLink to={link}>
-                                    Толығырақ
+                                    {getWord(words, lang, 'more')}
                                 </NavLink>
                             </div>
                         </div>

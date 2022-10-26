@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import './Navbar.css';
+import { LangContext } from "../../context/lang";
+
+import getWord from "../../context/hf";
+
 
 const Navbar = () => {
     const [isVisibleNavbar, setVisible] = useState(false);
+    const { lang, setLang } = useContext(LangContext);
 
     const toggleMenu = () => {
         const navbar = document.getElementById('navbar-items-container');
@@ -17,6 +22,33 @@ const Navbar = () => {
         }
     }
 
+    const [words, setWords] = useState([{
+        home:"Бас мәзір",
+        news:"Жаңалықтар",
+        groups:"Топтар",
+        events:"Іс-шаралар",
+        report:"Есеп",
+        about:"Біз туралы"
+    },
+    {
+        home:"Главная",
+        news:"Новости",
+        groups:"Группы",
+        events:"Мероприятия",
+        report:"Отчеты",
+        about:"О нас"
+    },
+    {
+        home:"Home",
+        news:"News",
+        groups:"Groups",
+        events:"Events",
+        report:"Reports",
+        about:"About us"
+    }
+])
+
+
     return(
         <div className="navbar-container">
      
@@ -24,32 +56,32 @@ const Navbar = () => {
                 <ul>
                     <li>
                         <NavLink exact to="/">
-                            Бас мәзір
+                       
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/news">
-                            Жаңалықтар
+                            {getWord(words, lang, 'home')}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/groups">
-                            Топтар
+                        {getWord(words, lang, 'groups')}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/">
-                            Іс-шаралар
+                        {getWord(words, lang, 'events')}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/">
-                            Есеп
+                        {getWord(words, lang, 'report')}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink exact to="/">
-                            Біз туралы
+                        {getWord(words, lang, 'about')}
                         </NavLink>
                     </li>
                 </ul>

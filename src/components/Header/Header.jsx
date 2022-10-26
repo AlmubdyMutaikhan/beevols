@@ -6,13 +6,16 @@ import useAuth from "../../hooks/useAuth";
 import { useContext } from "react";
 import { UserContext } from "../../hooks/UserContext";
 import Notification from "../Notification/Notification";
+import { LangContext } from "../../context/lang";
+
+import getWord from "../../context/hf";
 
 
 const Header = () => {
     const { user, setUser } = useContext(UserContext);
     const { signoutUser } = useAuth();
     const [loggedOut, setLoggedOut] = useState(false);
-    
+    const { lang, setLang } = useContext(LangContext);
     const handleSignOut = () => {
 
         signoutUser();
@@ -21,6 +24,24 @@ const Header = () => {
             setLoggedOut(false);
         }, 4000);
     }
+
+
+    const [words, setWords] = useState([{
+        be:"Ерікті бол",
+                logout:"Шығу",
+                msg:'Сіз өз аккаунтыңыздан сәтті шықтыңыз'
+            },
+            {be:"Стань волонтером",
+                logout:"Выйти",
+                msg:'Вы вышли из своей учетной записи'
+            },
+            {be:"Be a volunteer",
+                logout:"Log out",
+                msg:'You logged out your account'
+            }
+    ])
+
+    
 
     return(
         <div className="header-container">
@@ -41,7 +62,9 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="header-languages-container">
-                    <select id="languages">
+                    <select id="languages" onChange={(e) => {
+                        setLang(e.target.value);
+                    }}>
                         <option value="kz">KZ</option>
                         <option value="ru">RU</option>
                         <option value="en">EN</option>
@@ -56,12 +79,13 @@ const Header = () => {
                 </div>
                 <div className="header-user-container">
                         {user && <div className="volonter-be-btn" onClick={handleSignOut}>
-                        <a className='auth-btn'>Шығу</a></div>}
+                        <a className='auth-btn'>{getWord(words, lang, 'logout')}</a></div>}
                         {!user && <div className="volonter-be-btn">
-                        <NavLink to="/auth" className='auth-btn'>Ерікті бол!</NavLink></div>}
+                        <NavLink to="/auth" className='auth-btn'>{getWord(words, lang, 'be')}</NavLink></div>}
                 </div>
             </div>
-            {loggedOut && <Notification title={'Шығу'} msg={'Сіз өз аккаунтыңыздан сәтті шықтыңыз'} bgColor={'green'}/>}
+            {loggedOut && <Notification title={getWord(words, lang, 'logout')}
+             msg={getWord(words, lang, 'msg')} bgColor={'green'}/>}
             
         </div>
     )

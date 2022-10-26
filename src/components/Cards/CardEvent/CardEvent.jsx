@@ -1,7 +1,29 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
+import { LangContext } from "../../../context/lang";
+import getWord from "../../../context/hf";
 
 const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, logo, onClick}) => {
+    
+    const { lang, setLang } = useContext(LangContext);
+    const words = [{
+        d:'Өткізілу күні:',
+        p:'Өту орны: ',
+        r:' Тіркелу'
+    },
+    {
+        d:'Дата:',
+        p:'Место проведения:',
+        r:'Зарегистрироваться'
+    },
+    {
+        d:'Date:',
+        p:'Place: ',
+        r:'Register'
+    },
+
+
+]
     return(
         <div className="slide-content-container">
                         <div className="slide-content-text">
@@ -14,16 +36,16 @@ const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, 
                             </div>
                             <div className="slide-content-p">
                                 <p>
-                                    {desc}
+                                   {desc}
                                 </p>
                             </div>
                             <div className="slide-content-event">
-                                <h3>Өткізілу күні: {date}</h3>
-                                <h3>Өту орны: {place}</h3>
+                                <h3> {getWord(words, lang, 'd')} {date}</h3>
+                                <h3> {getWord(words, lang, 'p')}{place}</h3>
                             </div>
                             <div className="slide-content-btn">
                                 <p onClick={onClick}>
-                                    Тіркелу
+                                {getWord(words, lang, 'r')}
                                 </p>
                             </div>
                         </div>

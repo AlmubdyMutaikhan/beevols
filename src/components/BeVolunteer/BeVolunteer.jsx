@@ -1,17 +1,45 @@
 import React from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import './BeVolunteer.css';
+import { LangContext } from "../../context/lang";
+import getWord from "../../context/hf";
 
 const BeVolunteer = () => {
+    const { lang, setLang } = useContext(LangContext);
+    const [words, setWords] = useState([
+        {q1:'Ерікті болғың келе ме?',
+        p1:'Адамдарға қол ұшын созу, көмектесу және шаттану',
+        b1:'Ерікті болу',
+        q2:'Еріктілерді іздейсіз бе?',
+        p2:'Егер де жаңа іс-бастап, ерікті достар іздеймін десеңіз',
+        b2:'Еріктілерді іздеу',
+    },
+    {q1:'Хотите стать волонтером?',
+    p1:'Общаться, помогать и подбадривать людей',
+    b1:'Быть волонтером',
+    q2:'Ищете волонтеров?',
+    p2:'Если вы хотите начать новый бизнес и ищете друзей-добровольцев',
+    b2:'Искать волонтеров',
+},
+{q1:'Want to volunteer?',
+        p1:'Reaching out, helping and cheering people up',
+        b1:'Be a volunteer',
+        q2:'Looking for volunteers?',
+        p2:'If you want to start a new business and look for volunteer friends',
+        b2:'Look for volunteers',
+    },
+
+    ])
     return(
         <div className="offers-container">
             <div className="offer-container">
                 <div className="offer-text">
-                    <h2>Ерікті болғың келе ме?</h2>
-                    <p>Адамдарға қол ұшын созу, көмектесу және шаттану</p>
+                    <h2>{getWord(words, lang, 'q1')}</h2>
+                    <p>{getWord(words, lang, 'p1')}</p>
                     <div className="offer-btn">
                         <NavLink to="/auth">
-                            Ерікті болу
+                        {getWord(words, lang, 'b1')}
                         </NavLink>
                     </div>
                 </div>
@@ -21,11 +49,11 @@ const BeVolunteer = () => {
             </div>
             <div className="offer-container">
                 <div className="offer-text">
-                    <h2>Еріктілерді іздейсіз бе?</h2>
-                    <p>Егер де жаңа іс-бастап, ерікті достар іздеймін десеңіз</p>
+                    <h2>{getWord(words, lang, 'q2')}</h2>
+                    <p>{getWord(words, lang, 'p2')}</p>
                     <div className="offer-btn" style={{border: '2px solid var(--second)'}}>
                         <NavLink to="/groups">
-                            Еріктілерді іздеу
+                        {getWord(words, lang, 'b2')}
                         </NavLink>
                     </div>
                 </div>

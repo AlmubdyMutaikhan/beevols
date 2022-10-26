@@ -23,13 +23,17 @@ import MyProjects from './components/MyProjects/MyProjects';
 import NewProject from './components/newProject/NewProject';
 import MyProject from './components/MyProject/MyProject';
 import MyTasks from './components/MyTasks/MyTask';
+import { LangContext } from './context/lang';
+import { useState } from 'react';
 
 function App() {
   const { user, setUser } = useFindUser();
+  const [lang, setLang] = useState('kz');
 
   return (
     <>
       <Router>
+        <LangContext.Provider value={{lang, setLang}}>
         <UserContext.Provider value={{user, setUser}}>
           <Header/>
           <Navbar/>
@@ -56,7 +60,10 @@ function App() {
             <Route path='/myprojects/:id/:projectID' element={<MyProject/>}/>
           </Routes>
         </UserContext.Provider>
+         
+        </LangContext.Provider>
       </Router>
+
     </>
   );
 }
