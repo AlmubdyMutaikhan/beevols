@@ -7,7 +7,7 @@ import { LangContext } from "../../context/lang";
 import getWord from "../../context/hf";
 const Gallery = () => {
     const { lang, setLang } = useContext(LangContext);
-//
+// code
     const [words, setWords] = useState([{
             s1t:"Қош келдің, ерікті!",
             s1d:`Ерікті болу ерлікпен тең, өз Қарағанды өңіріңді дамытуға үлес қосуыңа әрқашан көмектесеміз. Және де
