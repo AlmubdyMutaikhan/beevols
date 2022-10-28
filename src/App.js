@@ -25,6 +25,7 @@ import MyProject from './components/MyProject/MyProject';
 import MyTasks from './components/MyTasks/MyTask';
 import { LangContext } from './context/lang';
 import { useState } from 'react';
+import EventList from './components/EventList/EventList';
 
 function App() {
   const { user, setUser } = useFindUser();
@@ -46,6 +47,7 @@ function App() {
             <Route path='/myblog' element={<MyBlog/>} />
             <Route path='/myblog/new' element={<NewBlog/>} />
             <Route path='/auth' element={<Auth/>} />
+            <Route path='/events' element={<EventList/>} />
             <Route path='/profile' element={<Profile/>} />
             <Route path='/profile-edit' element={<ProfileEdit/>} />
             <Route path='/blogs/:id' element={<Blog/>} />

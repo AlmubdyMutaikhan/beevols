@@ -1,0 +1,18 @@
+.evpage-container {
+    margin-top: 130px;
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--montserrat);
+    padding-top: 20px;
+}
+
+.evpage-card-container {
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}

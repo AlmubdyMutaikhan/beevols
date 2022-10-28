@@ -70,7 +70,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink exact to="/">
+                        <NavLink exact to="/events">
                         {getWord(words, lang, 'events')}
                         </NavLink>
                     </li>

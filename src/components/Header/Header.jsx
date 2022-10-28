@@ -47,7 +47,11 @@ const Header = () => {
         <div className="header-container">
                    
             <div className="header-logo-container">
-                <h1>Bee Volunteers</h1>
+                <h1>
+                    <NavLink to='/'>
+                        Bee Volunteers
+                        </NavLink>    
+                    </h1>
             </div>
             <div className="header-data-container">
                 <div className="header-social-medias">

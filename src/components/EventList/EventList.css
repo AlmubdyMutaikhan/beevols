@@ -1,4 +1,4 @@
-.notifications-container {
+.evlist-container {
     margin-top: 130px;
     margin-left: 10%;
     width: 80%;
@@ -10,10 +10,10 @@
 }
 
 
-.notifications-container h1 {
+.evlist-container h1 {
     font-size: 40px;
 }
-.notifications-card-container {
+.evlist-card-container {
     height: auto;
     width: 100%;
     margin-top: 20px;
@@ -21,46 +21,47 @@
     flex-wrap: wrap;
 }
 
-.notifications-item-container {
-    height: 200px;
-    width: 450px;
+.evlist-item-container {
+    height: 350px;
+    width: 550px;
     border-radius: 10px;
     border: 3px solid var(--fifth);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 15px;
     cursor: pointer;
     margin-left: 20px;
     margin-top: 20px;
 }
 
-.notifications-item-container h2 {
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-
-.notifications-item-container p {
-    background: rgba(210, 241, 253, 0.623);
-    padding: 20px;
-    height: 70%;
-    border-radius: 10px;
-}
-
-.notifications-item-container a {
-    padding: 10px 0;
-    background-color: var(--fourth);
-    border-radius: 10px;
-    width: 30%;
+.evlist-item-container .evlist-img-con {
+    width: 50%;
+    height:100%;
     display: flex;
     justify-content: center;
-    color: white;
-    margin-top: 5px;
-    margin-left: 70%;
-    cursor: pointer;
+    align-items: center;
 }
 
+.evlist-img-con img {
+    width: 95%;
+    height: 95%;
+    border-radius: 20px;
+    margin-left: -20px;
+}
+.evlist-text-con {
+    width: 50%;
+    height: 100%;
+}
+.evlist-item-container .evlist-text-con h3{
+    margin-top: 10px;
+    width: 100%;
+    color: var(--fifth);
+    text-align: center;
+}
 
-.read {
-    opacity: 0.8;
-    border: 3px solid rgba(36, 112, 226, 0.589);
+.evlist-text-con .event-desc-l {
+    max-width: 100%;
+    padding: 10px;
+    overflow-wrap: break-word;
+    height: auto;
 }

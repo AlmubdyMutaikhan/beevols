@@ -18,6 +18,13 @@
     margin-left: 20px;
 }
 
+.header-logo-container h1 a {
+    color: black;
+    text-decoration: none;
+    font-family: var(--montserrat);
+    font-size: 30px;
+}
+
 .header-data-container {
     display: flex;
     justify-content: space-between;
