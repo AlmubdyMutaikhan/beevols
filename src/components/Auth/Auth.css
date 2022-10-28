@@ -14,7 +14,7 @@
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 900;
   margin-top: 50px;
 }
 
@@ -394,6 +394,7 @@ input {
 
 @media (max-width: 570px) {
   form {
+    margin-top: 50px;
     padding: 0 1.5rem;
   }
 

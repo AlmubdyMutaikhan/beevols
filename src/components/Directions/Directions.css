@@ -35,3 +35,9 @@
 .directions-items .direction-item p:hover {
     border-bottom: 3px solid var(--first);
 }
+
+@media only screen and (max-width: 600px) {
+    .directions-container {
+        display: none;
+    }
+}

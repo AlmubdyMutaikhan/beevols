@@ -101,3 +101,10 @@
 .hot-news-item:hover {
     background: yellow;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .info-container {
+        display: none;
+    }
+}

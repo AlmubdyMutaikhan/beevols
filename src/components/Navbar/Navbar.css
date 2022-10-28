@@ -57,14 +57,16 @@
         opacity: 1;
     }
 }
+
 @media only screen and (max-width: 600px) {
+    
     .navbar-container {
         margin: 0;
         height: auto;
         background-color: white;
         margin-top: 12%;
         width: 100%;
-        
+        display: none;    
     }
     
     #navbar-items-container {

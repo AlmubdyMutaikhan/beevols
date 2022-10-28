@@ -28,7 +28,7 @@ const WannaBe = () => {
       <div className="wannabe-container">
           <div className="wannabe-text">
           <h1>{getWord(words, lang, 'q')}</h1>
-          <p style={{width:'50%'}}>
+          <p>
            {getWord(words, lang, 'a')}
           </p>
           <div className="wannabe-btn">

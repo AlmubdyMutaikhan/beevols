@@ -59,3 +59,28 @@
 .offer-btn:hover a{
     color: white;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .offers-container {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        height: 700px;
+    }
+    .offer-container {
+        height: 50%;
+        width: 100%;
+        padding: 60px;
+        margin-top: 10px;
+    }
+    .offer-btn {
+        margin-top: 20px;
+        z-index: 22;
+        width: 120px;
+        padding: 10px;
+    }
+    .offer-btn a {
+        font-size: 17px;
+    }
+}

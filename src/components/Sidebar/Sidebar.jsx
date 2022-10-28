@@ -27,7 +27,7 @@ const Sidebar = () => {
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
                         <NavLink to={'/profile'}>
-                        <i class="fas fa-address-card" style={{fontSize:'40px'}}></i>
+                        <i class="fas fa-user"></i>
                         </NavLink>
                     </div>
                     <div className='sidebar-text-container'>
@@ -40,7 +40,13 @@ const Sidebar = () => {
                 </div>
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
-                        {newNotifications ? <i class="fad fa-bells"></i> : <i class="fas fa-bell"></i>   }
+                    <NavLink to={'/notifications'}>
+                        {newNotifications ? <i class="fad fa-bells"></i> : <i class="fas fa-bell"></i>   
+                        
+                        
+                        }
+
+                        </NavLink>
                     </div>
                     <div className='sidebar-text-container'>
                         <NavLink to={'/notifications'}>
@@ -50,7 +56,8 @@ const Sidebar = () => {
                 </div>
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
-                        <i class="fad fa-feather-alt"></i>
+                    <NavLink to={'/myblog'}><i class="fad fa-feather-alt"></i>
+                    </NavLink>
                     </div>
                     <div className='sidebar-text-container'>
                     <NavLink to={'/myblog'}>
@@ -60,7 +67,9 @@ const Sidebar = () => {
                 </div>
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
+                    <NavLink to={'/users'}>
                     <i class="fas fa-users"></i>
+                    </NavLink>
                     </div>
            
                     <div className='sidebar-text-container'>         <NavLink to={'/users'}><p>Еріктілер</p>
@@ -69,7 +78,9 @@ const Sidebar = () => {
                 </div>
                 <div className='sidebar-item-container'>
                     <div className='sidebar-logo-container'>
+                    <NavLink to={'/mytasks'}>
                     <i class="fas fa-tasks"></i>
+                    </NavLink>
                     </div>
                     <div className='sidebar-text-container'>
                     <NavLink to={'/mytasks'}>

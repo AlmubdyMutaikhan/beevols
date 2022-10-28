@@ -71,3 +71,11 @@
     margin-left: -60%;
 } 
 
+
+
+@media only screen and (max-width: 600px) {
+    .slide {
+        margin-left: 0;
+        background: red;
+    }
+}

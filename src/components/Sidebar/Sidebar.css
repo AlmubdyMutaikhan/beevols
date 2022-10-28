@@ -100,3 +100,42 @@
     padding-left: 0;
 }
 
+
+
+@media only screen and (max-width: 600px) {
+    .sidebar-container {
+        position: fixed;
+        right:0;
+        height: 60px;
+        width: 100%;
+        background-color: #eee;
+        display: flex;
+        flex-direction: row;
+        z-index: 99;
+        top:93%;
+    }
+
+    .sidebar-container .sidebar-items-container {
+        display: flex;
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    .sidebar-logo-container {
+        font-size: 27px;
+    }
+
+    .sidebar-container .sidebar-setting-container{
+        display: none;
+    }
+    .sidebar-item-container:hover i, .sidebar-item-container:hover  p{
+        pointer-events: none;
+    }
+
+    .sidebar-container:hover {
+        width: 100%;
+    }
+    .sidebar-text-container {
+        display: none;
+    }
+}
