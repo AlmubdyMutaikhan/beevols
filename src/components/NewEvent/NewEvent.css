@@ -1,0 +1,72 @@
+.my-create-blog-container {
+    width: 80%;
+    margin-left: 10%;
+    height: 90vh;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--montserrat);
+    margin-bottom: 20px;
+}
+
+.my-create-blog-container img {
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+}
+
+
+.create-blog-form {
+    height: 100%;
+    width: 70%;
+    font-family: var(--montserrat);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #eee;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+.blog-input {
+    font-family: var(--montserrat);
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    border-bottom: 2px solid gray;
+    width: 80%;
+    font-size: 25px;
+    margin-top: 24px;
+}
+
+textarea {
+    width: 80%;
+    height: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    font-family: var(--montserrat);
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+}
+
+.blog-submit {
+    cursor: pointer;
+    margin-top: 20px;
+    background: var(--fourth);
+    padding: 15px 50px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}

@@ -77,7 +77,7 @@ export default function useAuth( setLoading, setMessage, setStatus ) {
 
             setTimeout(async () => {
                 await setUserContext();
-                navigate('/');
+                window.location.href='/';
             }, 500);
 
             return true;

@@ -7,6 +7,8 @@ import useGroup from '../../hooks/useGroup';
 
 import Notification from '../Notification/Notification';
 import Loading from '../Loading/Loading';
+import { FaFontAwesome } from 'react-icons/fa';
+import EventCalendar from '../EventCalendar/EventCalendar';
 
 const GroupProfile = () => {
     const { getOneGroup, requestToGroup } = useGroup();
@@ -138,13 +140,36 @@ const [likes, setLikes] = useState(0);
                     <h1>Топ туралы</h1>
                     <p>{groupData.description}</p>
                 </div>
-                <div className='group-profile-add-news-container'>
-                    {groupData.admin === userID &&  <NavLink to={'/mypost/' + groupData._id}>
+                <div className='group-profile-add-news-container' style={{
+                    display:'flex',
+                    width:'250px',
+                    marginLeft:'60%',
+                    justifyContent:'space-between'
+                    
+                }}>
+                    {groupData.admin === userID && <>
+                        <NavLink to={'/mypost/' + groupData._id} style={{
+                                marginLeft:'-50px',
+                               
+                        }}>
                                         <p> 
                                             Жаңалық қосу</p>
                                 </NavLink> 
+                                <NavLink to={`/group/${groupData._id}/event`}>
+                                        <p> 
+                                            Іс-шара өткізу</p>
+                                </NavLink> 
+
+                    </> 
                     } {groupData.admin !== userID && !groupData.members.includes(userID) && 
-                            <p style={{cursor:'pointer', marginRight:''}} onClick={addToGroup}> 
+                            <p style={{cursor:'pointer', marginRight:'',
+                            background:'var(--fifth)',
+                                padding:'10px 35px',
+                                borderRadius:'15px',
+                                marginLeft:'70%',
+                                marginTop:'-30%',
+                               
+                            }} onClick={addToGroup}> 
                                 {userID !== '' ? 'Топқа кіру' : 'Топпен байланысу үшін олардың контакітілерін қолданыңыз' }
                             </p>
                         }
@@ -160,6 +185,16 @@ const [likes, setLikes] = useState(0);
             </div>
             {/*updated && <Notification msg={'Сіздің дос болу өтнішіңіз сәтті жіберілді'} title={'Дос болу'} bgColor={'green'}/>*/ }
                 </div>
+
+                <div className='group-posts-container' style={{
+                    width:'95%',
+                    marginLeft:'5%'
+                }}>
+                    <br/>
+                    <br/>
+                     <EventCalendar/>
+                </div>    
+
                 <div className='group-posts-container'>
                      <div className='group-posts-logo'> 
                             <h1>Белсенділік лентасы </h1>

@@ -26,6 +26,7 @@ import MyTasks from './components/MyTasks/MyTask';
 import { LangContext } from './context/lang';
 import { useState } from 'react';
 import EventList from './components/EventList/EventList';
+import NewEvent from './components/NewEvent/NewEvent';
 
 function App() {
   const { user, setUser } = useFindUser();
@@ -41,6 +42,7 @@ function App() {
           {user && <Sidebar/>}
           <Routes>
             <Route exact path='/' element={<Index/>} />
+            <Route path='/group/:id/event' element={<NewEvent/>} />
             <Route path='/users' element={<Users/>}/>
             <Route path='/news' element={Navbar} />
             <Route path='/user/:id' element={<UserProfile/>}/>
@@ -56,6 +58,7 @@ function App() {
             <Route path='/groups' element={<Groups/>} />
             <Route path='/group/:id' element={<GroupProfile/>}/>
             <Route path='/mygroup/new' element={<NewGroup/>} />
+          
             <Route path='/myprojects/:id/new' element={<NewProject/>} />
             <Route path='/myprojects/:id' element={<MyProjects/>}/>
             <Route path='/mytasks' element={<MyTasks/>}/>

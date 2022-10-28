@@ -182,11 +182,18 @@
  .group-profile-add-news-container {
     margin-top: 90px;
     margin-left: 70%;
-    background: var(--fifth);
+    
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
     text-align: center;
+}
+
+.group-profile-add-news-container a {
+    background: var(--fifth);
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-left: 10px;
 }
 
 .group-posts {
