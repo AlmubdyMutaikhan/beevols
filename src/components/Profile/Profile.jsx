@@ -108,7 +108,9 @@ const Profile = () => {
     
     return(
         <>
-        <div className="pc profile-container">
+        <div className="pc profile-container" style={{
+            height:'auto'
+        }}>
             <div className='profile-main-container'>
                 <div className='profile-avatar-container'>
                     <img src={avatarURL} />
@@ -189,7 +191,9 @@ const Profile = () => {
 
 
             </div>
-            
+            <div className='mobile-sep'>
+
+</div>
         </div>
         
         {/*
@@ -335,6 +339,8 @@ const Profile = () => {
 
         </div>
 
+    
+
         <div className="my-blog-published-container my-blog-published-container-profile">
                 <h1 className="border-bottom">Ерікті жазбалары</h1>
                 <div className="my-blog-published-items-container">
@@ -365,7 +371,12 @@ const Profile = () => {
                     )) }
                    
                 </div>
+
+
+
+
             </div>
+            
         </>
         
     )
