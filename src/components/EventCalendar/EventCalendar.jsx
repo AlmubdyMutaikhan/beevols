@@ -36,6 +36,9 @@ d1:'Contribute to the annual book exchange event at NIS CBD school'
 },
     ]
 
+
+
+
     return(
         <div className="event-container">
         <div className="event-text">

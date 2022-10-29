@@ -2,8 +2,9 @@ import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
 import { LangContext } from "../../../context/lang";
 import getWord from "../../../context/hf";
+import './CardEvent.css';
 
-const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, logo, onClick}) => {
+const CardEventGroup = ({title, desc, style, date, place, bgImg, index, link, intro, logo, onClick}) => {
     
     const { lang, setLang } = useContext(LangContext);
     const words = [{
@@ -25,15 +26,20 @@ const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, 
 
 ]
     return(
-        <div className="slide-content-container"
-        style={style}>
-                        <div className="slide-content-text">
+        <div className="egslide-container"
+       >
+                <div className="egslide-content-image"
+                        style={{background:`url('${bgImg}')`,
+                        backgroundPosition:'center',
+                        backgroundSize:'cover'}}>
+                            
+                        </div>
+                        <div className="egslide-content-text">
                             <div className="slide-content-index">
                                 <h1><span>{index}/</span>4</h1>
                             </div>
                             <div className="slide-content-title">
-                                <h1>{title}</h1>
-                                <img className="slide-content-img" src={logo}/>
+                                <h2>{title}</h2>
                             </div>
                             <div className="slide-content-p">
                                 <p>
@@ -50,12 +56,10 @@ const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, 
                                 </p>
                             </div>
                         </div>
-                        <div className="slide-content-image" style={{background:`url(${bgImg})`, backgroundPosition:'center', backgroundSize:'cover'}}>
-                            
-                        </div>
+                        
                     </div>
     )
 }
 
 
-export default CardEvent;
+export default CardEventGroup;

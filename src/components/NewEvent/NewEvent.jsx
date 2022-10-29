@@ -5,24 +5,28 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../firebase';
 import Loading from "../Loading/Loading";
 import Notification from "../Notification/Notification";
-import useGroup from "../../hooks/useGroup";
-import { useNavigate } from "react-router-dom";
+
+import { useNavigate, useParams } from "react-router-dom";
+import useEvent from "../../hooks/useEvent";
 
 const NewEvent = () => {
-    const {isAuthenticated} = useAuth();
- 
+
+
     const [avatarFile, setAvatarFile] = useState(null);
     const [loading, setLoading] = useState(false);
-    const {createNewGroup} = useGroup();
-    const [name, setName] = useState('');
-    const [description, setDesc] = useState('');
+    const [title, setTitle] = useState('');
+    const [info, setInfo] = useState('');
     const [uploaded, setUploaded] = useState(false);
     const [place, setPlace] = useState('');
-    const [email, setEmail] = useState('');
+    const [date, setDate] = useState('');
+    const params = useParams();
+    const [msg, setMsg] = useState('');
+    const [status, setStatus] = useState('green')
 
-
-
+    const {isAuthenticated} = useAuth();
+    const {postEvent} = useEvent(setLoading, setMsg);
     const navigate = useNavigate();
+
     const fileHandler = (e) => {
         e.preventDefault();
         const file = e.target.files[0];
@@ -33,15 +37,15 @@ const NewEvent = () => {
         const user = await isAuthenticated();
         
         if(user.status) {
-            const data = {
-                    admin : user.payload.id,
-                    name,
-                    description,
-                    avatarURL : localStorage.getItem('img'),
-                    place
+            const is = {
+                    title,
+                    info,
+                    img : localStorage.getItem('img'),
+                    place,
+                    date
             }
             
-            const res = await createNewGroup(data);
+            const res = await postEvent({is, gId:params.id});
             
             setLoading(false);
             setUploaded(true);
@@ -60,7 +64,7 @@ const NewEvent = () => {
         } else {
             setLoading(true);
 
-            const storageRef = ref(storage, `/groups/group-${name}.jpg`);
+            const storageRef = ref(storage, `/events/group-event-${params.id}${title}.jpg`);
             const uploadTask = uploadBytesResumable(storageRef, avatarFile);
             
             uploadTask.on("state_changed", 
@@ -83,14 +87,15 @@ const NewEvent = () => {
         <div className="my-create-blog-container">
             <h1>Жаңа іс-шара <img src="https://cdn4.iconfinder.com/data/icons/sport-fitness-vol-01/512/44-team-teamwork-group-encouragement-256.png"/></h1>
             <div className="create-blog-form">
-                <input type={'text'} className="blog-input" placeholder={'Атауы'} onChange={e=>setName(e.target.value)}/>
-                <input type={'date'} className="blog-input" placeholder={'Өту күні'} onChange={e=>setPlace(e.target.value)}/>
-                <input type={'email'} className="blog-input" style={{fontSize:'20px'}}  onChange={e=>setEmail(e.target.value)} placeholder={'Өту орны'}/>
+                <input type={'text'} className="blog-input" placeholder={'Атауы'} onChange={e=>setTitle(e.target.value)}/>
+                <input type={'date'} className="blog-input" placeholder={'Өту күні'} onChange={e=>setDate(e.target.value)}/>
+                <input type={'text'} className="blog-input" style={{fontSize:'20px'}} 
+                onChange={e=>setPlace(e.target.value)} placeholder={'Өту орны'}/>
                 <textarea 
                         type={'text'}
                         className="blog-input"
                         style={{fontSize:'20px'}} 
-                        onChange={e=>setDesc(e.target.value)}
+                        onChange={e=>setInfo(e.target.value)}
                         placeholder={'Сипаттама'}>
                 </textarea>
                 <input type={'file'} onChange={fileHandler} className='avatar-file-submit'/>
@@ -98,7 +103,7 @@ const NewEvent = () => {
                     <a>Жаңа іс-шара құру</a>
                 </div>
                 {loading && <Loading/>}
-                {uploaded && <Notification  title={'Құттықтаймыз'} msg={'Сіздің іс-шараңыз сәтті ашылды'} bgColor={'green'}/>}
+                {uploaded && <Notification  title={'Хабарлама'} msg={msg} bgColor={status}/>}
             </div>
         </div>
     )

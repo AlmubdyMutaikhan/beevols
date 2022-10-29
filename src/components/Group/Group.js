@@ -9,6 +9,7 @@ import Notification from '../Notification/Notification';
 import Loading from '../Loading/Loading';
 import { FaFontAwesome } from 'react-icons/fa';
 import EventCalendar from '../EventCalendar/EventCalendar';
+import EventCalendarGroup from '../EventCalendarG/EventCalendar';
 
 const GroupProfile = () => {
     const { getOneGroup, requestToGroup } = useGroup();
@@ -36,13 +37,13 @@ const GroupProfile = () => {
         try {
             const data = await getOneGroup(params.id);
             const user = await isAuthenticated();
-            console.log(data.activity.reverse());
+          //  console.log(data.activity.reverse());
             setGroupData(data);
             if(user.status) {
                 setUserId(user.payload.id);
             }
 
-            console.log(data.contacts);
+//            console.log(data.contacts);
 
             
         } catch(err) {
@@ -60,7 +61,7 @@ const GroupProfile = () => {
             setTimeout(() => {
                 setRequested(false);
             }, 3000);
-            console.log(res);
+            //console.log(res);
 
         } catch(err) {
             console.log(err);
@@ -192,7 +193,8 @@ const [likes, setLikes] = useState(0);
                 }}>
                     <br/>
                     <br/>
-                     <EventCalendar/>
+                     <EventCalendarGroup
+                      gId={params.id}/>
                 </div>    
 
                 <div className='group-posts-container'>

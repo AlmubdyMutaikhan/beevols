@@ -14,9 +14,10 @@ export default function useAuth( setLoading, setMessage, setStatus ) {
             
         try {
             const status = await axios.get('/auth/payload', {params : { token }});
-            
+            console.log(status);
             if(status.data.msg === 'ok' && status.data.payload) {
-                    setUser({status : true, payload : status.data.payload});
+            
+                setUser({status : true, payload : status.data.payload});
             } else {
                     setUser(null);
             }
@@ -77,7 +78,7 @@ export default function useAuth( setLoading, setMessage, setStatus ) {
 
             setTimeout(async () => {
                 await setUserContext();
-                window.location.href='/';
+                navigate('/');
             }, 500);
 
             return true;

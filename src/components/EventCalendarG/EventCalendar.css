@@ -1,0 +1,8 @@
+.group-event-calendar {
+    border: 2px solid var(--first);
+    border-radius: 15px;
+    width: 70%;
+    margin-left: 0;
+    height: 400px;
+}
+
