@@ -5,7 +5,7 @@ const useGroup = () => {
     const getAllGroups = async () => {
         try {
             const groups = await axios.get('/group/all');
-            console.log(groups);
+         //   console.log(groups);
             return groups.data.groups;
         } catch(err) {
             return err.response.data.err;
@@ -20,6 +20,18 @@ const useGroup = () => {
             return err.response.data.err;
         }
     }
+
+
+    const checkLeader = async (gId, uId) => {
+            const group = await getOneGroup(gId);
+
+            if(group.admin === uId) {
+                return {status:true};
+            } else {
+                return {status:false};
+            }
+    }
+
 
     const createNewGroup = async (data) => {
         try {
@@ -82,7 +94,8 @@ const useGroup = () => {
         requestToGroup,
         addToGroup,
         createNewProject,
-        addToDo
+        addToDo,
+        checkLeader
     }
 }
 

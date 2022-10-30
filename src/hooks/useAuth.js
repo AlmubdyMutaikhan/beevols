@@ -67,6 +67,8 @@ export default function useAuth( setLoading, setMessage, setStatus ) {
         }
     }
 
+
+
     const signInUser = async ({email, password}) => {
         try {
             setLoading(true);

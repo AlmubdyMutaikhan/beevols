@@ -6,7 +6,8 @@ import { LangContext } from "../../context/lang";
 import getWord from "../../context/hf";
 import { useEffect } from "react";
 import useEvent from "../../hooks/useEvent";
-
+import useAuth from "../../hooks/useAuth";
+import useGroup from "../../hooks/useGroup";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import CardEventGroup from "../Cards/CardEventGroup/CardEvent";
@@ -15,6 +16,19 @@ const EventCalendarGroup = ({gId}) => {
    
     const {getEvents} = useEvent();
     const [events, setEvents] = useState([]);
+    const {isAuthenticated} = useAuth();
+    const {checkLeader} = useGroup();
+    const [leader, setLeader] = useState(false);
+    const [done, setDone] = useState(false);
+
+    const check = async () => {
+        const user = await isAuthenticated();
+        if(user.status) {
+            const {status} = await checkLeader(gId, user.payload.id);
+            setLeader(status);
+        }
+    }
+
 
     const load = async () => {
         const events = await getEvents(gId);
@@ -24,9 +38,12 @@ const EventCalendarGroup = ({gId}) => {
 
    useEffect(() => {
     load();
+    check();
    }, []);
 
+  
 
+ 
 
     return(
         <div className="event-container">
@@ -39,9 +56,13 @@ const EventCalendarGroup = ({gId}) => {
             {events.map((e, id) => {
                     return <CardEventGroup
                                     style={{
-                                        height:'100%',
-                                        width:'100%'
+                                        height:'400px',
+                                        width:'100%',
+                                        
                                     }}
+                                    evId={e._id}
+                                    gId={gId}
+                                    len={events.length}
                                     title={e.title}
                                     index={id+1}
                                     date={e.date}
@@ -50,13 +71,16 @@ const EventCalendarGroup = ({gId}) => {
                                     desc={
                                         e.info
                                     }
-                                    
+                                    setDone={setDone}
+                                    leader={leader}
                                     link={'/'}
                                     bgImg={e.img}
                         />    
                 })}
+                
             </Carousel>
-        
+            {done && <Notification  title={'Хабарлама'}
+                        msg={'Сіздің іс-шараңыз сәтті өшірілді'} bgColor={'green'}/>}
     </div>
     )
 

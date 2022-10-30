@@ -29,9 +29,34 @@ const useEvent = (setLoading, setMessage) => {
         }
     }
 
+    const getAll = async () => {
+        try {
+            const events = await axios.get('/event/all');
+            return events.data.ises;
+        } catch(err) {
+            return err.response.data.err;
+        }
+    }
+
+
+    const deleteEvent = async (gId, evId) => {
+        try {
+            setLoading(true);
+            await axios.delete(`/event/${gId}/${evId}`);
+            setLoading(false);
+            setMessage('Сәтті түрде іс-шара өшірілді');
+        } catch(err) {
+            setMessage('Упс, қайта көріңіз')
+            setLoading(false);
+            return err.response.data.err;
+            
+        }
+    }
     return {
         postEvent,
-        getEvents
+        getEvents,
+        getAll,
+        deleteEvent
     }
 }
 

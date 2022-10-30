@@ -1,8 +1,9 @@
 .egslide-container {
-   border-radius: 15px;
+   border-radius: 20px;
    width: 100%;
    height: 400px;
    display: flex; 
+   
 }
 
 .egslide-content-image {

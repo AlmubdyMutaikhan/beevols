@@ -53,7 +53,7 @@ const Groups = () => {
 
     const renderGroupName = (str) => {
 
-        console.log(str, str.length);
+       // console.log(str, str.length);
         if(str.length < 14) {
             return str;
         } else {
