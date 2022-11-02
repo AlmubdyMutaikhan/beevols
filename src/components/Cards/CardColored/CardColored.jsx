@@ -28,7 +28,7 @@ const CardColored = ({ title, desc, style, bgImg, index, link, intro, logo }) =>
                                 </p>
                             </div>
                             <div className="slide-content-btn">
-                                <NavLink to={link}>
+                            <NavLink to={link}>
                                     {getWord(words, lang, 'more')}
                                 </NavLink>
                             </div>

@@ -12,7 +12,7 @@ const Blog = (props) => {
     const [name, setName] = useState('');
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('')
-    const [blogImg, setImg] = useState('');
+    const [blogImg, setImg] = useState('https://cdn.dribbble.com/users/255512/screenshots/2215917/animation.gif');
     const [comments, setComments] = useState([]);
     const [likes, setlikes] = useState(0);
     const [author, setAuthor] = useState('');
@@ -20,6 +20,8 @@ const Blog = (props) => {
     const [blogId, setBlogId] = useState('');
     const {isAuthenticated} = useAuth();
     const [notification, setNotification] = useState({visible:false, msg:''});
+    
+    
     const load = async () => {
         const data = await getBlog(params.id);
         setTitle(data.title);

@@ -88,7 +88,7 @@ const Gallery = () => {
                             }}
                             index={1}
                             logo={'https://cdn4.iconfinder.com/data/icons/new-year-color-line/64/15-confetti-128.png'}
-                            link={'/auth'}
+                            link={'/blogs/636270fb65dd9e6354f263c2'}
                             intro={getWord(words, lang, 's1i')}
                             bgImg={'https://bilimdinews.kz/wp-content/uploads/2020/12/WhatsApp-Image-2020-12-08-at-18.39.08.jpeg'}
                     />
@@ -102,10 +102,11 @@ const Gallery = () => {
                         
                             index={2}
                             logo={'https://cdn4.iconfinder.com/data/icons/creative-process-53/64/insight-intelligence-creative-solutions-opportunity-256.png'}
-                            link={'/auth'}
+                            link={'/blogs/6362738365dd9e6354f26414'}
                             intro={getWord(words, lang, 's2i')}
+                        
                     />
-                </div>
+                </div>  
         
                 <div class="slide third">
                 <CardColored 
@@ -114,7 +115,7 @@ const Gallery = () => {
                             desc={getWord(words, lang, 's3d')}
                             bgImg={'https://www.inform.kz/radmin/fotofiles/2022/09/17/2209171800313740f.jpg'}
                             logo={'https://cdn3.iconfinder.com/data/icons/business-round-set-1/128/COLLABORATE-256.png'}
-                            link={'/auth'}
+                            link={'/blogs/6362726865dd9e6354f2640e'}
                             intro={getWord(words, lang, 's3i')}
                     />
                 </div>
@@ -125,7 +126,7 @@ const Gallery = () => {
                             title={getWord(words, lang, 's4t')}
                             desc={getWord(words, lang, 's4d')}
                             logo={'https://cdn4.iconfinder.com/data/icons/new-year-color-line/64/15-confetti-128.png'}
-                            link={'/auth'}
+                            link={'/blogs/6362726865dd9e6354f2640e'}
                             bgImg={`https://rus.azattyq-ruhy.kz/cache/imagine/main_page_full/uploads/news/2020/02/12/5e43bc9a6f79e673098969.jpg`}
                             intro={getWord(words, lang, 's4i')}
                     />
