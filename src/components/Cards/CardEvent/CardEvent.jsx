@@ -40,7 +40,9 @@ const CardEvent = ({title, desc, style, date, place, bgImg, index, link, intro, 
                                    {desc}
                                 </p>
                             </div>
-                            <div className="slide-content-event">
+                            <div className="slide-content-event" style={{
+                            
+                            }}>
                                 <h3> {getWord(words, lang, 'd')} {date}</h3>
                                 <h3> {getWord(words, lang, 'p')}{place}</h3>
                             </div>

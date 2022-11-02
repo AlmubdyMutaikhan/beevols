@@ -7,6 +7,7 @@
     flex-direction: column;
     font-family: var(--montserrat);
     padding-top: 20px;
+    background: white;
 }
 
 .evpage-card-container {

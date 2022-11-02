@@ -52,11 +52,22 @@ const useEvent = (setLoading, setMessage) => {
             
         }
     }
+
+
+    const regEvent = async (uId, eventId) => {
+        try {
+            const res = await axios.post('/event/reg', {uId, eventId });
+            console.log(res.data);
+        } catch(err) {
+            return err.response.data.err;
+        }
+    }
     return {
         postEvent,
         getEvents,
         getAll,
-        deleteEvent
+        deleteEvent,
+        regEvent
     }
 }
 

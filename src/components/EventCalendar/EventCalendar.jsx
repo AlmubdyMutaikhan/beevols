@@ -57,7 +57,7 @@ d1:'Contribute to the annual book exchange event at NIS CBD school'
                     <CardEvent 
                         title={getWord(words, lang, 'n1')}
                         index={1}
-                        date={'20.10.22'}
+                        date={'20.11.22'}
                         place={getWord(words, lang, 'p1')}
                         logo={'https://cdn3.iconfinder.com/data/icons/education-science-vol-1-1/512/books_book_glasses_reading-128.png'}
                         desc={
@@ -76,7 +76,7 @@ d1:'Contribute to the annual book exchange event at NIS CBD school'
                 <CardEvent 
                         title={'IT бағдарламасын оқыту'}
                         index={4}
-                        date={'25.10.22'}
+                        date={'25.11.22'}
                         place={'Балалар сарайы-2'}
                         logo={'https://cdn1.iconfinder.com/data/icons/luchesa-2/128/Computer-64.png'}
                         desc={

@@ -71,6 +71,7 @@ const EventCalendarGroup = ({gId}) => {
                                     desc={
                                         e.info
                                     }
+                                    
                                     setDone={setDone}
                                     leader={leader}
                                     link={'/'}
