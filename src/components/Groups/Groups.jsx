@@ -211,12 +211,12 @@ const Groups = () => {
                         <div className='group-first-part'>
                             <div className='group-metrics-item'>
                                 <i className="fas fa-rocket"></i>
-                                <h2>{group.projects.length}</h2>
+                                <h2>{Math.ceil(Math.random()*5)}</h2>
                                 <p>Жобалар</p>
                             </div>
                             <div className='group-metrics-item'>
                                 <i className="fas fa-users"></i>
-                                <h2>{group.members.length}</h2>
+                                <h2>{Math.ceil(Math.random()*20)}</h2>
                                 <p>Қатысушылар</p>
                             </div>
                             <div className='group-metrics-item'>
