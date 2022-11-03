@@ -148,6 +148,9 @@ const UserProfile = () => {
                     <h1>Өзім туралы</h1>
                     <p>{about}</p>
                 </div>
+                <div className='profile-edit' onClick={!friendsReqList.includes(id) && handleAddFriend}><a>
+                    Хат жазу
+                </a></div>
                 {id.length > 0 && id !== params.id && !friendsList.includes(id) && <div className='profile-edit' onClick={!friendsReqList.includes(id) && handleAddFriend}><a> {
                   !friendsReqList.includes(id) ? 'Дос болу' : 'Өтініш жіберілді'
                 }</a></div>}
